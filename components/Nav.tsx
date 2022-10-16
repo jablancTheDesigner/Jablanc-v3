@@ -38,12 +38,12 @@ function Nav(){
         <header>
             <nav className="border-b border-primary flex w-full fixed left-1/2 right-0 h-[var(--nav-height)] text-dark p-0 z-[99] -translate-x-1/2">
                     <Link href="/">
-                            <a className="relative px-4 py-0 flex items-center justify-center w-[75px] bg-primary">
+                            <a className="relative px-4 py-0 flex items-center justify-center w-[75px] bg-transparent border-r border-primary">
                                 <Logo color="white"></Logo>
                             </a>
                     </Link>
                 <div className="relative flex ml-auto">
-                    <button className="bg-primary text-white w-16 m-auto relative z-[9] border-none appearance-none cursor-pointer opacity-100 px-4 py-0 flex h-full items-center border-l border-primary hover:opacity-80"
+                    <button className="bg-transparent text-white w-16 m-auto relative z-[9] appearance-none cursor-pointer opacity-100 px-4 py-0 flex h-full items-center border-l border-primary hover:opacity-80"
                             onClick={()=> setOpen(!open)}>
                             {renderNavTriger('white')}
                     </button>

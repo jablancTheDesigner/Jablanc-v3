@@ -9,8 +9,8 @@ function SocialLinks(){
         {icon: <AiTwotoneMail /> , address: 'mailto:jablancdesigns@gmail.com'}
     ]  
     return (
-        <div className="h-16 flex fixed bottom-0 left-0 text-2xl text-primary">
-            <ul className="list-none border-r border-t border-primary mt-auto px-8 flex gap-8 items-center py-4">
+        <div className="h-16 flex fixed bottom-0 left-0 text-2xl text-primary md:w-auto w-full">
+            <ul className="list-none border-r border-t border-primary mt-auto px-8 flex gap-8 items-center py-4 w-full justify-evenly">
                 {links.map((link,i) => {
                     return (
                         <li key={i} className="p-0 list-none text-2xl w-auto flex items-center">

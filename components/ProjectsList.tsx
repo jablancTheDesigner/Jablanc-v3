@@ -12,7 +12,7 @@ import { getProjects } from "../src/projectsService";
 
 const ProjectsList:FC<any> = (props): ReactElement => {
 
-    const [projects, setProjects] = useState<Project[]>(getProjects());
+    const [projects, setProjects] = useState<Project[]>([]);
     const [isLoading, setLoading] = useState<boolean>(false);
 
     const [gridStyle, setGridStyle] = useState<number>(1);
@@ -35,6 +35,10 @@ const ProjectsList:FC<any> = (props): ReactElement => {
         setGridClasses(classNames);
         setGridStyle(style);
     }
+
+    useEffect(()=> {
+        setProjects(getProjects());
+    }, [])
 
     return (
         <div className={styles.projects}>
