@@ -51,11 +51,11 @@ function Nav(){
             </nav>
 
             <div className={`fixed right-0 top-0 transition-all ease-in-out ${open ? 'opacity-100 z-50' : 'opacity-0 -z-[1]'}`}>
-                <div className="w-screen h-screen p-4 flex flex-col fixed top-0 left-0 pt-[var(--nav-height)] justify-center text-center bg-primary/[90%]">
+                <div className="w-screen h-screen p-4 flex flex-col fixed top-0 left-0 pt-[var(--nav-height)] justify-center text-center bg-primary">
                     <div className="-mt-[var(--nav-height)] flex flex-col max-w-2xl mx-auto">
                         {links.map( (link, index) => {
                             return <Link href={link.url} key={index}>
-                                <a className="hover:text-dark drop-shadow-lg tracking-tight md:text-5xl lg:text-7xl text-4xl font-medium mb-4 text-white last-of-type:mb-0" 
+                                <a className="app-button app-button--primary tracking-tight md:text-5xl lg:text-7xl text-4xl" 
                                    onClick={()=>setOpen(false)}>
                                     {link.name}
                                 </a>

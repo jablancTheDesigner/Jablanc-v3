@@ -2,7 +2,7 @@
     position: relative;
     padding: 20px 35px;
     margin: 10px;
-    border: 2px solid black;
+    border: 2px solid var(--clr-dark);
     background: var(--clr-dark);
     -moz-transition: all 300ms;
     -o-transition: all 300ms;
@@ -42,5 +42,18 @@
         -ms-transform: skewX(45deg) scale(1, 1);
         -webkit-transform: skewX(45deg) scale(1, 1);
         transform: skewX(45deg) scale(1, 1);
+      }
+
+      &--primary{
+        background-color: var(--clr-primary);
+        border: none;
+
+        &:after{
+            background-color: var(--clr-dark);
+        }
+
+        &:hover{
+            color: white;
+        }
       }
 }
