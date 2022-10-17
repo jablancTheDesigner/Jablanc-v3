@@ -1,11 +1,17 @@
 import Button from "./Button";
 import {FC, ReactElement} from 'react';
+import Link from 'next/link';
 
 const Hero:FC<any> = (props): ReactElement => {
     const styles = {
       'hero': 'hero min-h-screen flex flex-col items-center justify-center bg-dark',
       'headline':'relative z-1 relative text-center flex max-w-2xl flex-col z-10',
       'h1': 'text-white z-2 relative tracking-tight md:text-6xl lg:text-7xl text-4xl font-bold p-8 drop-shadow-lg'
+    }
+
+    const showArgs = (e: Event) => {
+      e.preventDefault();
+      console.log('clicked')
     }
 
     return (
@@ -15,7 +21,11 @@ const Hero:FC<any> = (props): ReactElement => {
               Hi I&apos;m Jahmal, a Frontend Developer & Designer based in Alpharetta, GA.
             </h1>
             <div className="flex items-center gap-8 justify-center md:flex-row flex-col">
-              <Button link="/projects" name="The Work" apperance="fill" theme="dark" />
+              <Link href="/projects">
+                  <a className="app-button"> 
+                  The Work
+                  </a>
+              </Link>
             </div>
           </div>
           <div className="hero__background absolute left-1/2 -translate-x-1/2 top-0 leading-[.7] text-center w-screen h-screen overflow-hidden flex items-center justify-between">
