@@ -36,16 +36,16 @@ function Nav(){
 
     return (
         <header>
-            <nav className="border-b border-primary flex w-full fixed left-1/2 right-0 h-[var(--nav-height)] text-dark p-0 z-[99] -translate-x-1/2">
+            <nav className="flex w-full fixed left-1/2 right-0 h-[var(--nav-height)] text-dark p-0 z-[99] -translate-x-1/2">
                     <Link href="/">
-                            <a className="relative px-4 py-0 flex items-center justify-center w-[75px] bg-transparent border-r border-primary">
+                            <a className="relative px-4 py-0 flex items-center justify-center w-[75px] bg-dark border-b border-r border-dark">
                                 <Logo color="white"></Logo>
                             </a>
                     </Link>
                 <div className="relative flex ml-auto">
-                    <button className="bg-transparent text-white w-16 m-auto relative z-[9] appearance-none cursor-pointer opacity-100 px-4 py-0 flex h-full items-center border-l border-primary hover:opacity-80"
+                    <button className="app-button w-16 m-auto relative z-[9] appearance-none cursor-pointer opacity-100 !px-4 py-0 flex h-full items-center hover:opacity-80"
                             onClick={()=> setOpen(!open)}>
-                            {renderNavTriger('white')}
+                            {renderNavTriger('var(--clr-primary)')}
                     </button>
                 </div>
             </nav>
@@ -55,9 +55,9 @@ function Nav(){
                     <div className="-mt-[var(--nav-height)] flex flex-col max-w-2xl mx-auto">
                         {links.map( (link, index) => {
                             return <Link href={link.url} key={index}>
-                                <a className="app-button app-button--primary md:text-5xl lg:text-6xl text-4xl mb-4 last-of-type:mb-0" 
+                                <a className="app-button app-button--primary md:text-5xl lg:text-6xl text-4xl" 
                                    onClick={()=>setOpen(false)}>
-                                    {link.name}
+                                    <span className="drop-shadow-lg">{link.name}</span>
                                 </a>
                             </Link>
                         })}

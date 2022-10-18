@@ -23,7 +23,7 @@
             z-index: 1;
         }
         &:before{
-            background: radial-gradient( var(--clr-primary) , transparent  75% );
+            background: radial-gradient( var(--clr-primary) , transparent  );
             z-index: 2;
         }
     }

@@ -19,7 +19,7 @@ module.exports = {
       }
     },
     fontFamily: {
-      'league-spartan': 'LeagueSpartan',
+      'league-spartan': '\'League Spartan\'',
       'libre-baskerville-italic': 'LibreBaskerville-Italic',
       'libre-baskerville-regular': 'LibreBaskerville-Regular'
     },

@@ -6,8 +6,14 @@ const Hero:FC<any> = (props): ReactElement => {
     const styles = {
       'hero': 'hero min-h-screen flex flex-col items-center justify-center bg-dark',
       'headline':'relative z-1 relative text-center flex max-w-lg md:max-w-3xl flex-col z-10',
-      'h1': 'text-white z-2 relative tracking-tight md:text-6xl lg:text-7xl text-4xl font-bold p-8 drop-shadow-lg'
+      'h1': 'text-white z-2 relative tracking-tight md:text-6xl lg:text-7xl text-4xl font-medium p-8 drop-shadow-lg font-league-spartan'
     }
+
+    const bgWords: string[] = [
+      'FrontEnd',
+      'Developer',
+      'Designer'
+    ]
 
     const showArgs = (e: Event) => {
       e.preventDefault();
@@ -17,7 +23,7 @@ const Hero:FC<any> = (props): ReactElement => {
     return (
       <div className={styles.hero}>
           <div className={styles.headline}>
-            <h1 className={styles.h1}>
+            <h1 className="text-white z-2 relative tracking-tighter md:text-6xl lg:text-7xl text-4xl font-semibold p-8 drop-shadow-lg font-league-spartan">
               Hi I&apos;m Jahmal, a Frontend Developer & Designer based in Alpharetta, GA.
             </h1>
             <div className="flex items-center gap-8 justify-center md:flex-row flex-col">
@@ -28,12 +34,18 @@ const Hero:FC<any> = (props): ReactElement => {
               </Link>
             </div>
           </div>
-          <div className="hero__background absolute left-1/2 -translate-x-1/2 top-0 leading-[.7] text-center w-screen h-screen overflow-hidden flex items-center justify-between">
-            <h1 className="text-primary font-bold tracking-tighter break-none lg:text-[22rem] md:text-[19rem] text-[15rem] opacity-5 text-center">
-              <span className="block mx-auto animate-pulse">FRONT END </span>
-              <span className="block mx-auto animate-pulse">DEVELOPER</span>
-              <span className="block mx-auto animate-pulse">DESIGNER</span>
-            </h1>
+          <div className="hero__background absolute left-0 top-0 leading-[0.7] text-center w-screen h-screen overflow-hidden flex flex-col  break-all justify-center">
+            
+              {bgWords.map( (word,idx) => {
+                return (
+                  <div className="opacity-10">
+                    <h1 className="text-primary font-bold tracking-tighter break-none lg:text-[15rem] md:text-[11rem] text-[7rem]  text-center  animate-pulse uppercase whitespace-nowrap" key={idx}>
+                      {word}
+                    </h1>
+                  </div>
+                )
+              })}
+
           </div>
       </div>
     )
