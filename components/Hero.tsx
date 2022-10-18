@@ -38,7 +38,7 @@ const Hero:FC<any> = (props): ReactElement => {
             
               {bgWords.map( (word,idx) => {
                 return (
-                  <div className="opacity-10">
+                  <div className="opacity-10" key={idx}>
                     <h1 className="text-primary font-bold tracking-tighter break-none lg:text-[15rem] md:text-[11rem] text-[7rem]  text-center  animate-pulse uppercase whitespace-nowrap" key={idx}>
                       {word}
                     </h1>

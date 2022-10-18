@@ -41,7 +41,7 @@ const ProjectsList:FC<any> = ({data}): ReactElement => {
                                     className="border border-transparent hover:drop-shadow-primary cursor-pointer">
                                     <h2 className={styles.title}>{project.title}</h2>
                                     <div className="transition-all ease-in-out box-content">
-                                        <Image src='https://placehold.jp/1000x650.jpg' width='1000px' height='650px' />
+                                        <Image src='https://placehold.jp/1000x650.jpg' width='1000px' height='650px' alt="Preview project Image" />
                                     </div> 
                                     <p className="text-gray-300 text-lg font-thin font-league-spartan mt-4 hidden">
                                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga nam alias ullam illum minus in necessitatibus. 
