@@ -10,57 +10,44 @@ import {TbArrowAutofitWidth} from 'react-icons/tb';
 import Image from 'next/image';
 import { getProjects } from "../src/projectsService";
 import { motion, AnimatePresence, useScroll } from "framer-motion"
+import Card from "./Card";
 
 const ProjectsList:FC<any> = ({data}): ReactElement => {
 
     const { scrollYProgress } = useScroll();
 
-    const styles = {
-        'filterLinks': 'p-4 text-2xl font-bold hover:text-white text-center',
-        'title': 'md:text-4xl text-2xl tracking-tight font-league-spartan font-medium text-white text-center py-3 mb-4'
-    }
-
     return (
         <>
-            <motion.div className={`bg-primary fixed top-0 left-0 right-0 origin-top h-[10px] z-10`}  style={{ scaleX: scrollYProgress }}/> 
-            <div className="min-h-screen flex text-primary font-league-spartan w-full pt-[var(--nav-height)] bg-dark">
-                <div className="container mx-auto p-8 relative max-w-7xl">
+            <motion.div 
+                className="bg-primary fixed top-0 left-0 right-0 origin-top h-[10px] z-10"
+                style={{ scaleX: scrollYProgress }}/> 
+
+            <div className="min-h-screen flex text-primary font-league-spartan w-full bg-dark">
+                <div className="container mx-auto px-8 relative max-w-7xl">
                     <div className="gap-8 md:flex block">
                         <div className="md:w-1/3 w-full">
                             <div className="md:sticky md:top-[calc(var(--nav-height)+2rem)] mb-8 md:mb-0 flex flex-col py-8 md:h-[calc(100vh-(var(--nav-height)*2)-2rem)] h-auto">
                                 
-                                <div className="md:mb-auto text-6xl md:ml-0 pt-8">
+                                <div className="md:mb-auto text-6xl md:ml-0 pt-[var(--nav-height)]">
                                     <h1 className="text-5xl  mt-auto font-semibold tracking-tight text-white text-center md:text-left drop-shadow-md mb-4 uppercase">
                                         Projects
                                     </h1>
                                     <p className="text-base text-gray-500 max-w-md md:text-left text-center">
-                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat, aut adipisci ea quam dicta voluptatum!
+                                        No project is too small nor too big for ya bwoy! Having worked in many technologies, platforms, and content managment sytems, here are a few projects showcasing my experience.
                                     </p>
                                 </div>
                             </div>
                         </div>
+
                         <motion.div 
                             className="flex-1 pr-0 pl-0 md:pl-16 md:pr-4 grid">
-                            <motion.div className='relative grid gap-24 overflow-hidden'>
+                            <motion.div className='relative flex flex-col'>
                                 {data.map((project, idx) => (
-                                    <motion.div key={project.id} 
-                                        layoutId={project.id} 
-                                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                                        initial={{left: 100}}
-                                        whileInView={{ left: 0 }}
-                                        exit={{ left: 100 }}
-                                        className="border border-transparent hover:drop-shadow-primary cursor-pointer relative">
-                                        <motion.h2 className={styles.title}>{project.title}</motion.h2>
-                                        <motion.div className="transition-all ease-in-out box-content">
-                                            <Image src='https://placehold.jp/1000x650.jpg' width='1000px' height='650px' alt="Preview project Image" />
-                                        </motion.div> 
-                                        <motion.p className="text-gray-300 text-lg font-thin font-league-spartan mt-4 hidden">
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga nam alias ullam illum minus in necessitatibus. 
-                                        </motion.p>
-                                    </motion.div>
+                                    <Card content={project} key={idx} />
                                 ))}
                             </motion.div>
                         </motion.div>
+
                     </div>
                 </div>
             </div>

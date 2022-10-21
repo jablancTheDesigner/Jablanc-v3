@@ -6,7 +6,6 @@ const Hero:FC<any> = (props): ReactElement => {
     const styles = {
       'hero': 'hero min-h-screen flex flex-col items-center justify-center bg-dark',
       'headline':'relative z-1 relative text-center flex max-w-lg lg:max-w-2xl md:max-w-xl flex-col z-10',
-      'h1': 'text-white z-2 relative tracking-tight leading-tight md:text-6xl lg:text-7xl text-4xl font-medium p-8 drop-shadow-lg font-league-spartan'
     }
 
     const bgWords: string[] = [
@@ -14,11 +13,6 @@ const Hero:FC<any> = (props): ReactElement => {
       'Developer',
       'Designer'
     ]
-
-    const showArgs = (e: Event) => {
-      e.preventDefault();
-      console.log('clicked')
-    }
 
     return (
       <div className={styles.hero}>
@@ -34,6 +28,7 @@ const Hero:FC<any> = (props): ReactElement => {
               </Link>
             </div>
           </div>
+          
           <div className="hero__background absolute left-0 top-0 leading-[0.7] text-center w-screen h-screen overflow-hidden flex flex-col  break-all justify-center">
             
               {bgWords.map( (word,idx) => {
