@@ -55,9 +55,9 @@ function Nav(){
                     <div className="-mt-[var(--nav-height)] flex flex-col max-w-2xl mx-auto">
                         {links.map( (link, index) => {
                             return <Link href={link.url} key={index}>
-                                <a className="app-button app-button--primary md:text-5xl lg:text-6xl text-4xl" 
+                                <a className="app-button app-button--primary md:text-5xl lg:text-6xl text-4xl !text-dark hover:!text-white" 
                                    onClick={()=>setOpen(false)}>
-                                    <span className="drop-shadow-lg">{link.name}</span>
+                                    {link.name}
                                 </a>
                             </Link>
                         })}
