@@ -23,7 +23,7 @@ const Card:FC<Card> = ({content, layout}): ReactElement => {
                 className={`md:text-4xl text-2xl tracking-tight font-league-spartan font-medium text-white py-3 ${isGrid ? 'text-center' : 'text-left'}`}>{content.title}
             </motion.h2>
             <p className={`${isGrid ? 'text-center' : 'text-left'}`}>
-                {content.url && <a href={content.url} target="_blank">({content.url})</a>}
+                {content.url && <a href={content.url} target="_blank" rel="noreferrer">({content.url})</a>}
             </p>
             {isGrid && <motion.div className="transition-all ease-in-out box-content my-6">
                 <Image src='https://placehold.jp/1000x650.jpg' width='1000px' height='650px' alt="Preview project Image" />
