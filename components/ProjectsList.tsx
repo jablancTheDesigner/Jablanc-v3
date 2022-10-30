@@ -1,18 +1,14 @@
-import { useEffect, useRef, useState, forwardRef, FC, ReactElement } from "react";
-import {BsArrowDown, BsArrowsFullscreen} from 'react-icons/bs';
-import {FaArrowsAltH} from 'react-icons/fa'
-import { Project } from "../src/project";
-import Loader from "./Loader";
-import {AiOutlineColumnWidth} from 'react-icons/ai';
-import {FiColumns} from 'react-icons/fi';
-import {CgScrollV} from 'react-icons/cg';
-import {TbArrowAutofitWidth} from 'react-icons/tb';
-import Image from 'next/image';
-import { getProjects } from "../src/projectsService";
-import { motion, AnimatePresence, useScroll } from "framer-motion"
+import { FC, ReactElement, useState } from "react";
+import { motion, useScroll } from "framer-motion"
 import Card from "./Card";
+import {BsCollectionFill} from 'react-icons/bs';
+import {MdTableRows} from 'react-icons/md';
+
+type ProjectStyle = 'title' | 'grid';
 
 const ProjectsList:FC<any> = ({data}): ReactElement => {
+
+    const [layoutStyle, setLayoutStyle] = useState<ProjectStyle>('title');
 
     const { scrollYProgress } = useScroll();
 
@@ -35,15 +31,30 @@ const ProjectsList:FC<any> = ({data}): ReactElement => {
                                     <p className="text-base text-gray-500 max-w-md md:text-left text-center">
                                         No project is too small nor too big for ya bwoy! Having worked in many technologies, platforms, and content managment sytems, here are a few projects showcasing my experience.
                                     </p>
+
+                                    <div className="mt-8">
+                                        <h4 className="text-base border-b border-primary pb-2 font-semibold uppercase md:text-left text-center">
+                                            View options</h4>
+                                        <div className="grid grid-cols-2 border-b border-x border-primary">
+                                            <button className={`app-button text-3xl flex items-center gap-2 justify-center leading-3 ${layoutStyle == 'grid' ? '!bg-primary !text-dark' : '!text-primary'}`} 
+                                                onClick={() => setLayoutStyle('grid')}>
+                                                    <BsCollectionFill />
+                                            </button>
+                                            <button className={`app-button text-3xl flex items-center gap-2 justify-center leading-3 ${layoutStyle == 'title' ? '!bg-primary !text-dark' : '!text-primary'}`} 
+                                                onClick={() => setLayoutStyle('title')}>
+                                                    <MdTableRows />
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <motion.div 
                             className="flex-1 pr-0 pl-0 md:pl-16 md:pr-4 grid">
-                            <motion.div className='relative flex flex-col'>
+                            <motion.div className='relative flex flex-col md:py-[var(--nav-height)]'>
                                 {data.map((project, idx) => (
-                                    <Card content={project} key={idx} />
+                                    <Card content={project} key={idx} layout={layoutStyle} />
                                 ))}
                             </motion.div>
                         </motion.div>
