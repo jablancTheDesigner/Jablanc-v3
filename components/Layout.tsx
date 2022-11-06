@@ -7,7 +7,7 @@ const Layout:FC<any> = ({children}): ReactElement => {
     return (
         <>
             <Nav />
-            <main>{children}</main>
+            <main className='min-h-screen flex'>{children}</main>
             <SocialLinks />
         </>
     )

@@ -1,6 +1,6 @@
-import { FC } from "react";
+import { ReactElement } from "react";
 
-const Loader:FC<any> = (props) => {
+function Loader(props): ReactElement {
     return <div className="loader loader-4"></div>
 }
 

@@ -8,8 +8,7 @@ interface Card {
     layout: string
 }
 
-const Card:FC<Card> = ({content, layout}): ReactElement => {
-
+function Card({content, layout}: Card): ReactElement {
     let isGrid = layout == 'grid';
 
     return (
