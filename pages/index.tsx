@@ -1,16 +1,26 @@
-import Layout from '../components/Layout'
-import Hero from '../components/Hero';
-import Head from 'next/head';
+import Layout from "../components/Layout";
+import Hero from "../components/Hero";
+import Head from "next/head";
 
 export default function Home() {
+  const title: string = "Home";
+  const helloText: string = `Hi I'm Jahmal`;
+  const heroText: string = "Frontend Engineer & Designer";
+  const heroButtonText: string = "The Work";
+  const bgWords: string[] = ["FrontEnd", "Developer", "Designer"];
   return (
     <>
       <Head>
-          <title>Home</title>
-          <meta name="description" content="Home" />
-          <link rel="icon" href="/favicon.ico" />
+        <title>{title}</title>
+        <meta name="description" content="Home" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Hero />
+      <Hero
+        title={helloText}
+        subTitle={heroText}
+        buttonText={heroButtonText}
+        bgText={bgWords}
+      />
     </>
-  )
+  );
 }
