@@ -33,15 +33,15 @@ const Nav = (props: any): ReactElement => {
   const [open, setOpen] = useState(false);
   return (
     <header>
-      <nav className="flex w-full fixed left-1/2 right-0 h-[var(--nav-height)] text-dark p-0 z-[99] -translate-x-1/2">
+      <nav className="absolute flex w-full text-dark p-0">
         <Link href="/">
-          <a className="relative px-4 py-0 flex items-center justify-center w-[75px] bg-dark border-b border-r border-dark fill-white hover:fill-primary">
+          <a className="px-4 py-0 flex items-center justify-center w-[75px] bg-dark border-b border-r border-dark fill-white hover:fill-primary fixed left-0 top-0 h-[var(--nav-height)]">
             <Logo />
           </a>
         </Link>
-        <div className="relative flex ml-auto">
+        <div className={`fixed top-0 right-0 flex ml-auto z-[999] h-[var(--nav-height)]`}>
           <button
-            className="app-button w-16 m-auto relative z-[9] appearance-none cursor-pointer opacity-100 !px-4 py-0 flex h-full items-center justify-center text-center hover:opacity-80 fill-primary"
+            className={`app-button w-16 m-auto relative z-[9] appearance-none cursor-pointer opacity-100 !px-4 py-0 flex h-full items-center justify-center text-center hover:opacity-80 fill-primary`}
             onClick={() => setOpen(!open)}>
             {!open && (
               <svg
@@ -99,7 +99,7 @@ const Nav = (props: any): ReactElement => {
 
       <div
         className={`fixed right-0 top-0 transition-all ease-in-out ${
-          open ? "opacity-100 z-50" : "opacity-0 -z-[1]"
+          open ? "opacity-100 z-[998]" : "opacity-0 -z-[1]"
         }`}>
         <div className="w-screen h-screen p-4 flex flex-col fixed top-0 left-0 pt-[var(--nav-height)] justify-center text-center bg-primary">
           <div className="-mt-[var(--nav-height)] flex flex-col max-w-2xl mx-auto">

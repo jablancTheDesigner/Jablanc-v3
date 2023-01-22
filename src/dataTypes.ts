@@ -30,14 +30,24 @@ export type JBTools =
 export type JBProjectType = "development" | "logo" | "design" | "print";
 
 export interface JBProject {
-  id?: number;
+  id?: string | number;
   title?: string;
   client?: string;
   codeLink?: string;
   logo?: string;
   thumbnail?: string;
   gallery?: string[];
-  tools?: JBTools[];
+  tools?: {
+    react: boolean,
+    sass: boolean,
+    css: boolean,
+    html: boolean,
+    js: boolean,
+    angular: boolean,
+    photoshop: boolean,
+    illustrator: boolean,
+    firebase: boolean
+  },
   description?: string;
   url?: string;
   featured?: boolean;

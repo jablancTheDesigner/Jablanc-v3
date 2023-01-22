@@ -1,9 +1,10 @@
+import { JBProject } from '../../../../src/dataTypes';
 import { NextApiRequest, NextApiResponse } from "next";
-import { getProjects } from "../../../src/projectsService";
+import { Projects } from "../../../../src/project-data";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   res.status(200).json({
     method: req.method,
-    projects: getProjects(),
+    projects: Projects,
   });
 }

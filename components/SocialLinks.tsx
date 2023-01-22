@@ -10,7 +10,7 @@ const links = [
 
 function SocialLinks() {
   return (
-    <div className="h-16 flex fixed bottom-0 left-0 text-2xl text-primary md:w-auto w-full z-[3]">
+    <div className="h-16 flex justify-end fixed bottom-0 right-0 text-lg text-primary md:w-auto w-full z-[3]">
       <ul className="list-none border-r border-t border-dark mt-auto flex w-full justify-evenly bg-dark">
         {links.map((link, i) => {
           return (
@@ -18,7 +18,7 @@ function SocialLinks() {
               key={i}
               className="p-0 list-none text-2xl w-auto flex items-center">
               <Link href={link.address}>
-                <a className="app-button">{link.icon}</a>
+                <a className="app-button text-lg">{link.icon}</a>
               </Link>
             </li>
           );

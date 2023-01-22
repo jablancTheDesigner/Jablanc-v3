@@ -1,39 +1,36 @@
 .loader {
+  --size: 200px;
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: var(--size);
+  height: var(--size);
   border-radius: 50%;
   display: inline-block;
   vertical-align: middle;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.loader-4 {
   border: 7px double var(--clr-primary);
   -webkit-animation: ball-turn 1s linear infinite;
   animation: ball-turn 1s linear infinite;
+
+  &:before,
+  &:after {
+    --circle-pos: calc(var(--size) * 60%);
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--clr-primary);
+    border-radius: 50%;
+    bottom: 0;
+    right: var(--circle-pos);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  &:after {
+    left: var(--circle-pos);
+    top: 0;
+  }
 }
 
-.loader-4:before,
-.loader-4:after {
-  content: "";
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: var(--clr-primary);
-  border-radius: 50%;
-  bottom: 0;
-  right: 37px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.loader-4:after {
-  left: 37px;
-  top: 0;
-}
 
 @-webkit-keyframes ball-turn {
   0% {

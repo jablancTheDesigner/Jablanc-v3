@@ -5,7 +5,7 @@ import Head from "next/head";
 export default function Home() {
   const title: string = "Home";
   const helloText: string = `Hi I'm Jahmal`;
-  const heroText: string = "Frontend Engineer & Designer";
+  const heroText: string = "Developer & Designer";
   const heroButtonText: string = "The Work";
   const bgWords: string[] = ["FrontEnd", "Developer", "Designer"];
   return (

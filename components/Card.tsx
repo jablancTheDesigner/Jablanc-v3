@@ -2,8 +2,25 @@ import { motion } from "framer-motion";
 import { ReactElement } from "react";
 import Image from "next/image";
 import { JBCard } from "../src/dataTypes";
+import Link from "next/link";
+import {
+  DiHtml5,
+  DiSass,
+  DiReact,
+  DiCss3Full,
+  DiAngularSimple,
+  DiJavascript1,
+  DiPhotoshop,
+  DiIllustrator,
+} from 'react-icons/di';
+import {
+  IoLogoFirebase
+} from 'react-icons/io5'
 
-const Card = ({ content, layout }: JBCard): ReactElement => {
+const Card = ({ 
+  content, 
+  layout
+}: JBCard): ReactElement => {
   const isGrid = layout == "grid";
   const styles = (): string => {
     let customClasses = "";
@@ -12,7 +29,7 @@ const Card = ({ content, layout }: JBCard): ReactElement => {
         customClasses += "md:h-screen max-h-[800px]";
         break;
       case "row":
-        customClasses += "h-auto pb-4 border-b last-of-type:border-none";
+        customClasses += "h-auto";
         break;
       case "tile":
         "";
@@ -30,35 +47,23 @@ const Card = ({ content, layout }: JBCard): ReactElement => {
       initial={{ scale: 0 }}
       whileInView={{ scale: [0, 1], offset: 100 }}
       exit={{ scale: [1, 0], offset: 100 }}
-      className={`cursor-pointer relative flex flex-col justify-center mb-16 ${styles}`}>
-      <motion.h2
-        className={`md:text-4xl text-2xl tracking-tight font-league-spartan font-medium text-white py-3 ${
-          isGrid ? "text-center" : "text-left"
-        }`}>
-        {content.title}
-      </motion.h2>
-      <p className={`${isGrid ? "text-center" : "text-left"}`}>
-        {content.url && (
-          <a href={content.url} target="_blank" rel="noreferrer">
-            ({content.url})
-          </a>
-        )}
-      </p>
-      {isGrid && (
-        <motion.div className="transition-all ease-in-out box-content my-6">
-          <Image
-            src="https://placehold.jp/1000x650.jpg"
-            width="1000px"
-            height="650px"
-            alt="Preview project Image"
-          />
-        </motion.div>
-      )}
-      {content.description && (
-        <motion.p className="text-gray-300 text-lg font-thin font-league-spartan mt-4">
-          {content.description}
-        </motion.p>
-      )}
+      className={`cursor-pointer relative flex flex-col justify-center mb-8 hover:bg-primary hover:text-dark text-white p-8 ${styles}`}>
+        <motion.h2
+          className={`md:text-4xl text-2xl tracking-tight font-league-spartan font-medium text-center md:text-left`}>
+          {content.title}
+        </motion.h2>
+        <div className="mt-4 flex gap-4 text-2xl mx-auto md:mx-0">
+          {content.tools.html && <DiHtml5 />}
+          {content.tools.sass && <DiSass />}
+          {content.tools.react && <DiReact />}
+          {content.tools.css && <DiCss3Full />}
+          {content.tools.angular && <DiAngularSimple />}
+          {content.tools.js && <DiJavascript1 />}
+          {content.tools.photoshop && <DiPhotoshop />}
+          {content.tools.illustrator && <DiIllustrator />}
+          {content.tools.firebase && <IoLogoFirebase />}
+        </div>
+        
     </motion.div>
   );
 };

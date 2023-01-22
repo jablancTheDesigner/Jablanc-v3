@@ -1,4 +1,4 @@
-import { FC, ReactElement, useState } from "react";
+import { FC, ReactElement, Suspense, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { JBHeaderType, JBButtonType, JBHeroType } from "../src/dataTypes";
@@ -6,15 +6,15 @@ import { JBHeaderType, JBButtonType, JBHeroType } from "../src/dataTypes";
 export const TitleText = ({ title, subTitle }: JBHeaderType): ReactElement => {
   return (
     <motion.h1
-      className="text-dark z-2 relative p-4 md:p-8 font-league-spartan text-left md:text-center"
+      className="text-white z-2 relative py-4 md:py-8 font-league-spartan text-center md:text-left"
       initial={{ scale: 0, opacity: 0 }}
       whileInView={{ scale: [0, 1.2, 0.9, 1], opacity: [0, 1] }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-      <span className="block text-2xl md:text-3xl mb-4" data-testid="heading">
+      <span className="block text-2xl md:text-3xl lg:text-4xl mb-4 text-white" data-testid="heading">
         {title}
       </span>
       <span
-        className="md:text-6xl lg:text-7xl text-7xl tracking-tighter font-bold leading-[0.85]"
+        className="text-5xl md:text-6xl lg:text-7xl tracking-tight font-bold leading-[0.85] uppercase"
         data-testid="sub-heading">
         {subTitle}
       </span>
@@ -25,7 +25,7 @@ export const TitleText = ({ title, subTitle }: JBHeaderType): ReactElement => {
 export const ProjectButton = ({ title, text }: JBButtonType): ReactElement => {
   return (
     <motion.div
-      className="flex md:items-center items-start gap-8 justify-center md:flex-row flex-col relative"
+      className="flex items-start gap-8 md:flex-row flex-col relative mb-8 mx-auto md:mx-0"
       initial={{ top: 50, opacity: 0 }}
       whileInView={{ top: [-30, 10, 0], opacity: 1 }}
       transition={{ type: "spring", stiffness: 400, damping: 17, delay: 0.75 }}>
@@ -64,11 +64,13 @@ const Hero = ({
 }: JBHeroType): ReactElement => {
   return (
     <div className="hero flex flex-col items-center justify-center bg-dark flex-1">
-      <div className="relative z-1 flex max-w-lg lg:max-w-2xl md:max-w-xl flex-col z-10">
+      <div className="absolute z-1 flex max-w-sm md:max-w-lg lg:max-w-xl flex-col z-10 md:bottom-[var(--nav-height)] md:left-0 left-auto p-10 md:p-20 ">
         <TitleText title={title} subTitle={subTitle} />
         <ProjectButton title={buttonText} text={buttonText} />
       </div>
-      <HeroBg words={bgText} />
+      <Suspense fallback={null}>
+        <HeroBg words={bgText} />
+      </Suspense>
     </div>
   );
 };

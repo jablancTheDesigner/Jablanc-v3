@@ -5,13 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:release": "npm run lint && npm run test && npm run build",
+    "build:release": "npm run test && npm run build",
     "start": "next start",
     "lint": "next lint && npm run pretty:check",
     "lint:fix": "npm run pretty:fix",
     "pretty:check": "npx prettier --check .",
     "pretty:fix": "npx prettier --write .",
-    "test": "jest"
+    "test": "npm run lint && jest"
   },
   "dependencies": {
     "framer-motion": "^7.6.1",
