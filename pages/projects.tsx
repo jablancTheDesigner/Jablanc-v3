@@ -7,7 +7,6 @@ import { JBProject } from "../src/dataTypes";
 import { getProjects, getProjectsById } from "../src/projectsService";
 
 export default function Projects() {
-  const {isLoading} = usePortfolioContext();
   const pageTite = "Projects";
 
   return (

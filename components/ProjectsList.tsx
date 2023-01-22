@@ -37,7 +37,7 @@ const RenderedProjects = () => {
         <motion.div className="flex-1 pr-0 pl-0 md:pl-16 md:pr-4 grid relative">
           <motion.div className="flex flex-col md:py-[var(--nav-height)] mb-20">
             {projects.map((project, idx) => (
-              <motion.div layout onClick={() => handleSelect(project.id)}>
+              <motion.div layout onClick={() => handleSelect(project.id)} key={idx}>
                 <Card content={project} key={idx} layout={layoutStyle} />
               </motion.div>
             ))}
