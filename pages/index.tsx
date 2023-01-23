@@ -7,7 +7,7 @@ export default function Home() {
   const helloText: string = `Hi I'm Jahmal`;
   const heroText: string = "Developer & Designer";
   const heroButtonText: string = "The Work";
-  const bgWords: string[] = ["FrontEnd", "Developer", "Designer"];
+  const bgWords: string[] = ["FrontEnd", "Developer", "Designer", "Engineer"];
   return (
     <>
       <Head>

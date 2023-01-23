@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 
 export const Projects: JBProject[] = [
   {
-    id: 1,
+    id: "1",
     title: "LinkedIn Clone",
     client: "Me, Myself, and I",
     codeLink: "https://github.com/jablancTheDesigner/jpb-linkedin-clone",
@@ -29,7 +29,7 @@ export const Projects: JBProject[] = [
     type: ["development"],
   },
   {
-    id: 2,
+    id: "2",
     title: '"The Shop" E-Commerce',
     client: "Me, Myself, and I",
     codeLink: "https://github.com/jablancTheDesigner/puffessional",
@@ -54,7 +54,7 @@ export const Projects: JBProject[] = [
     type: ["development"],
   },
   {
-    id: 3,
+    id: "3",
     title: '"Yerrrp!" Public Forum ',
     client: "Me, Myself, and I",
     codeLink: "https://github.com/jablancTheDesigner/jpb-blog",
@@ -80,7 +80,7 @@ export const Projects: JBProject[] = [
     type: ["development"],
   },
   {
-    id: 4,
+    id: "4",
     title: "Cool Navigation",
     client: "Me, Myself, and I",
     codeLink: "https://github.com/jablancTheDesigner/minimalist-nav",
@@ -106,7 +106,7 @@ export const Projects: JBProject[] = [
     type: ["logo"],
   },
   {
-    id: 5,
+    id: "5",
     title: "Jay Photography",
     client: "Jay",
     codeLink: null,
@@ -131,7 +131,7 @@ export const Projects: JBProject[] = [
     type: ["logo"],
   },
   {
-    id: 6,
+    id: "6",
     title: "Kloud 9 Kicks",
     client: "Jay",
     codeLink: null,

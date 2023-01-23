@@ -41,7 +41,7 @@ export const ProjectButton = ({ title, text }: JBButtonType): ReactElement => {
 const HeroBg = ({ words }): ReactElement => {
   return (
     <div className="hero__background absolute left-0 top-0 leading-[0.7] text-center w-screen h-screen overflow-hidden flex flex-col  break-all justify-center">
-      {words?.map((word, idx) => {
+      {/* {words?.map((word, idx) => {
         return (
           <div className="opacity-10" key={idx}>
             <h1
@@ -51,7 +51,7 @@ const HeroBg = ({ words }): ReactElement => {
             </h1>
           </div>
         );
-      })}
+      })} */}
     </div>
   );
 };
@@ -64,9 +64,11 @@ const Hero = ({
 }: JBHeroType): ReactElement => {
   return (
     <div className="hero flex flex-col items-center justify-center bg-dark flex-1">
-      <div className="absolute z-1 flex max-w-sm md:max-w-lg lg:max-w-xl flex-col z-10 md:bottom-[var(--nav-height)] md:left-0 left-auto p-10 md:p-20 ">
-        <TitleText title={title} subTitle={subTitle} />
-        <ProjectButton title={buttonText} text={buttonText} />
+      <div className="container min-h-screen relative">
+        <div className="absolute z-1 flex max-w-sm md:max-w-lg lg:max-w-xl flex-col z-10 md:bottom-[var(--nav-height)] mx-auto md:mx-0 left-0 md:right-auto right-0 p-10 md:p-20 top-1/2 md:top-auto -translate-y-1/2 md:translate-y-0">
+            <TitleText title={title} subTitle={subTitle} />
+            <ProjectButton title={buttonText} text={buttonText} />
+        </div>
       </div>
       <Suspense fallback={null}>
         <HeroBg words={bgText} />

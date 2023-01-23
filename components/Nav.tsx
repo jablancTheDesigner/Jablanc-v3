@@ -1,14 +1,15 @@
 import { useState, ReactElement } from "react";
 import Link from "next/link";
+import { usePortfolioContext } from "../context/PortfolioContext";
 
 const links = [
-  { url: "/", name: "Home" },
-  { url: "/projects", name: "Projects" },
-  { url: "/blog", name: "Blog" },
-  { url: "/contact", name: "Contact" },
+  { url: "/", name: "Home", active: true },
+  { url: "/projects", name: "Projects", active: true },
+  { url: "/blog", name: "Blog", active: false },
+  { url: "/contact", name: "Contact", active: false },
 ];
 
-const Logo = (props: any): ReactElement => {
+const Logo = (): ReactElement => {
   return (
     <svg
       className="w-[35px] h-auto mx-auto"
@@ -29,71 +30,86 @@ const Logo = (props: any): ReactElement => {
   );
 };
 
-const Nav = (props: any): ReactElement => {
+const Nav = (): ReactElement => {
   const [open, setOpen] = useState(false);
+  const linkClasses = "app-button app-button--primary md:text-5xl lg:text-6xl text-4xl !text-dark !font-bold";
+  const { setSelectedProject, openProject, setOpenProject } = usePortfolioContext();
+
+  const handleNavLink = () => {
+    setOpen(false);
+    if(openProject){
+      setSelectedProject(null);
+      setOpenProject(false);
+      document.body.classList.remove('overflow-hidden');
+    }
+  
+  }
+
   return (
     <header>
-      <nav className="absolute flex w-full text-dark p-0">
-        <Link href="/">
-          <a className="px-4 py-0 flex items-center justify-center w-[75px] bg-dark border-b border-r border-dark fill-white hover:fill-primary fixed left-0 top-0 h-[var(--nav-height)]">
-            <Logo />
-          </a>
-        </Link>
-        <div className={`fixed top-0 right-0 flex ml-auto z-[999] h-[var(--nav-height)]`}>
-          <button
-            className={`app-button w-16 m-auto relative z-[9] appearance-none cursor-pointer opacity-100 !px-4 py-0 flex h-full items-center justify-center text-center hover:opacity-80 fill-primary`}
-            onClick={() => setOpen(!open)}>
-            {!open && (
-              <svg
-                width="46"
-                height="22"
-                viewBox="0 0 46 22"
-                xmlns="http://www.w3.org/2000/svg">
-                <rect width="46" height="6" rx="3" />
-                <rect x="19.0944" y="16" width="26.9057" height="6" rx="3" />
-              </svg>
-            )}
-            {open && (
-              <svg
-                width="29"
-                height="28"
-                viewBox="0 0 29 28"
-                xmlns="http://www.w3.org/2000/svg">
-                <rect
-                  x="12.0001"
-                  y="13.5456"
-                  width="19.1563"
-                  height="4.27119"
-                  rx="2.13559"
-                  transform="rotate(-45 12.0001 13.5456)"
-                />
-                <rect
-                  x="15.0203"
-                  y="10.6833"
-                  width="19.1563"
-                  height="4.27119"
-                  rx="2.13559"
-                  transform="rotate(45 15.0203 10.6833)"
-                />
-                <rect
-                  x="16.5657"
-                  y="13.7034"
-                  width="19.1563"
-                  height="4.27119"
-                  rx="2.13559"
-                  transform="rotate(135 16.5657 13.7034)"
-                />
-                <rect
-                  x="13.5455"
-                  y="16.5657"
-                  width="19.1563"
-                  height="4.27119"
-                  rx="2.13559"
-                  transform="rotate(-135 13.5455 16.5657)"
-                />
-              </svg>
-            )}
-          </button>
+      <nav className="fixed flex w-full text-dark p-0 z-[999]">
+        <div className="container mx-auto relative flex justify-between">
+          <Link href="/">
+            <a className={`px-4 py-0 flex items-center justify-center w-[75px] fill-white hover:fill-primary left-0 top-0 h-[var(--nav-height)] ${open ? "fill-dark" : "fill-white"}`}>
+              <Logo />
+            </a>
+          </Link>
+          <div className={`flex ml-auto z-[999] h-[var(--nav-height)]`}>
+            <button
+              className={`w-16 m-auto relative z-[9] appearance-none cursor-pointer opacity-100 !px-4 py-0 flex h-full items-center justify-center text-center hover:opacity-80 ${open ? "fill-dark" : "fill-white"}`}
+              onClick={() => setOpen(!open)}>
+              {!open && (
+                <svg
+                  width="46"
+                  height="22"
+                  viewBox="0 0 46 22"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect width="46" height="6" rx="3" />
+                  <rect x="19.0944" y="16" width="26.9057" height="6" rx="3" />
+                </svg>
+              )}
+              {open && (
+                <svg
+                  width="29"
+                  height="28"
+                  viewBox="0 0 29 28"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect
+                    x="12.0001"
+                    y="13.5456"
+                    width="19.1563"
+                    height="4.27119"
+                    rx="2.13559"
+                    transform="rotate(-45 12.0001 13.5456)"
+                  />
+                  <rect
+                    x="15.0203"
+                    y="10.6833"
+                    width="19.1563"
+                    height="4.27119"
+                    rx="2.13559"
+                    transform="rotate(45 15.0203 10.6833)"
+                  />
+                  <rect
+                    x="16.5657"
+                    y="13.7034"
+                    width="19.1563"
+                    height="4.27119"
+                    rx="2.13559"
+                    transform="rotate(135 16.5657 13.7034)"
+                  />
+                  <rect
+                    x="13.5455"
+                    y="16.5657"
+                    width="19.1563"
+                    height="4.27119"
+                    rx="2.13559"
+                    transform="rotate(-135 13.5455 16.5657)"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -105,13 +121,22 @@ const Nav = (props: any): ReactElement => {
           <div className="-mt-[var(--nav-height)] flex flex-col max-w-2xl mx-auto">
             {links.map((link, index) => {
               return (
-                <Link href={link.url} key={index}>
-                  <a
-                    className="app-button app-button--primary md:text-5xl lg:text-6xl text-4xl !text-dark hover:!text-white !font-bold"
-                    onClick={() => setOpen(false)}>
-                    {link.name}
-                  </a>
-                </Link>
+                <>
+                  {link.active && (
+                    <Link href={link.url} key={index}>
+                      <a
+                        className={`${linkClasses} hover:!text-white`}
+                        onClick={() => handleNavLink()}>
+                        {link.name}
+                      </a>
+                    </Link>
+                  )}
+                  {/* {!link.active && (
+                    <button 
+                      className={`${linkClasses} opacity-30 hover:cursor-not-allowed hover:!bg-transparent hover:after:hidden line-through`}
+                      disabled={true}>{link.name}</button>
+                  )} */}
+                </>
               );
             })}
           </div>

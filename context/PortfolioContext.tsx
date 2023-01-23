@@ -14,6 +14,8 @@ interface PortfolioContext {
     setLoading: (isLoading: boolean) => void;
     openProject: boolean;
     setOpenProject: (isOpen: boolean) => void;
+    selectedProject: JBProject;
+    setSelectedProject: (project: JBProject) => void;
 }
 
 export const PortfolioContext = createContext<PortfolioContext | undefined>(undefined);
@@ -28,6 +30,7 @@ const PortfolioContextProvider : FC<Props> = ({ children }) => {
     const [layoutControls, setLayoutControls] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(false); 
     const [openProject, setOpenProject] = useState<boolean>(false);
+    const [selectedProject, setSelectedProject] = useState<JBProject>(null);
 
     const portfolioState: PortfolioContext = {
         projects,
@@ -39,7 +42,9 @@ const PortfolioContextProvider : FC<Props> = ({ children }) => {
         loading,
         setLoading,
         openProject,
-        setOpenProject
+        setOpenProject,
+        selectedProject,
+        setSelectedProject
     }
 
     useEffect( () => {

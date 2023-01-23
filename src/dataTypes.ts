@@ -30,7 +30,7 @@ export type JBTools =
 export type JBProjectType = "development" | "logo" | "design" | "print";
 
 export interface JBProject {
-  id?: string | number;
+  id?: string;
   title?: string;
   client?: string;
   codeLink?: string;
@@ -63,5 +63,4 @@ export interface JBProjectsList {
 
 export interface JBCard {
   content: JBProject;
-  layout: string;
 }
