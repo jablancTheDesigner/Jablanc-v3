@@ -33,16 +33,21 @@ const Logo = (): ReactElement => {
 const Nav = (): ReactElement => {
   const [open, setOpen] = useState(false);
   const linkClasses = "app-button app-button--primary md:text-5xl lg:text-6xl text-4xl !text-dark !font-bold";
-  const { setSelectedProject, openProject, setOpenProject } = usePortfolioContext();
+  const { setSelectedProject, openProject, setOpenProject, navIsOpen, setNavIsOpen } = usePortfolioContext();
 
   const handleNavLink = () => {
     setOpen(false);
     if(openProject){
       setSelectedProject(null);
       setOpenProject(false);
-      document.body.classList.remove('overflow-hidden');
+      setNavIsOpen(false)
     }
   
+  }
+
+  const handleNavOpen = () => {
+    setOpen(!open)
+    setNavIsOpen(!navIsOpen)
   }
 
   return (
@@ -57,7 +62,7 @@ const Nav = (): ReactElement => {
           <div className={`flex ml-auto z-[999] h-[var(--nav-height)]`}>
             <button
               className={`w-16 m-auto relative z-[9] appearance-none cursor-pointer opacity-100 !px-4 py-0 flex h-full items-center justify-center text-center hover:opacity-80 ${open ? "fill-dark" : "fill-white"}`}
-              onClick={() => setOpen(!open)}>
+              onClick={() => handleNavOpen()}>
               {!open && (
                 <svg
                   width="46"

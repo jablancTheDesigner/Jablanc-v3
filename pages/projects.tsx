@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useState, useEffect, Suspense } from "react";
+import Body from "../components/Body";
 import Layout from "../components/Layout";
 import ProjectsList from "../components/ProjectsList";
 import { usePortfolioContext } from "../context/PortfolioContext";

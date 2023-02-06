@@ -1,12 +1,13 @@
-import { FC, ReactElement, Suspense, useState } from "react";
+import { FC, ReactElement, Suspense, useContext, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { JBHeaderType, JBButtonType, JBHeroType } from "../src/dataTypes";
+import { usePortfolioContext } from "../context/PortfolioContext";
 
 export const TitleText = ({ title, subTitle }: JBHeaderType): ReactElement => {
   return (
     <motion.h1
-      className="text-white z-2 relative py-4 md:py-8 font-league-spartan text-center md:text-left"
+      className="text-white z-2 relative py-4 md:py-8 font-league-spartan text-center"
       initial={{ scale: 0, opacity: 0 }}
       whileInView={{ scale: [0, 1.2, 0.9, 1], opacity: [0, 1] }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}>
@@ -25,7 +26,7 @@ export const TitleText = ({ title, subTitle }: JBHeaderType): ReactElement => {
 export const ProjectButton = ({ title, text }: JBButtonType): ReactElement => {
   return (
     <motion.div
-      className="flex items-start gap-8 md:flex-row flex-col relative mb-8 mx-auto md:mx-0"
+      className="flex items-start gap-8 md:flex-row flex-col relative mb-8 mx-auto"
       initial={{ top: 50, opacity: 0 }}
       whileInView={{ top: [-30, 10, 0], opacity: 1 }}
       transition={{ type: "spring", stiffness: 400, damping: 17, delay: 0.75 }}>
@@ -39,9 +40,10 @@ export const ProjectButton = ({ title, text }: JBButtonType): ReactElement => {
 };
 
 const HeroBg = ({ words }): ReactElement => {
+  const {activateBg} = usePortfolioContext();
   return (
     <div className="hero__background absolute left-0 top-0 leading-[0.7] text-center w-screen h-screen overflow-hidden flex flex-col  break-all justify-center">
-      {/* {words?.map((word, idx) => {
+      {activateBg && words?.map((word, idx) => {
         return (
           <div className="opacity-10" key={idx}>
             <h1
@@ -51,7 +53,7 @@ const HeroBg = ({ words }): ReactElement => {
             </h1>
           </div>
         );
-      })} */}
+      })}
     </div>
   );
 };
@@ -62,17 +64,18 @@ const Hero = ({
   buttonText,
   bgText,
 }: JBHeroType): ReactElement => {
+  const { activateBg } = usePortfolioContext();
   return (
-    <div className="hero flex flex-col items-center justify-center bg-dark flex-1">
-      <div className="container min-h-screen relative">
-        <div className="absolute z-1 flex max-w-sm md:max-w-lg lg:max-w-xl flex-col z-10 md:bottom-[var(--nav-height)] mx-auto md:mx-0 left-0 md:right-auto right-0 p-10 md:p-20 top-1/2 md:top-auto -translate-y-1/2 md:translate-y-0">
+    <div className="hero bg-dark">
+      <div className="container mx-auto min-h-screen relative flex flex-col items-center justify-center">
+        <div className="relative flex max-w-sm md:max-w-lg lg:max-w-xl flex-col z-10 mx-auto">
             <TitleText title={title} subTitle={subTitle} />
             <ProjectButton title={buttonText} text={buttonText} />
         </div>
       </div>
       <Suspense fallback={null}>
-        <HeroBg words={bgText} />
-      </Suspense>
+            <HeroBg words={bgText} />
+          </Suspense>
     </div>
   );
 };
