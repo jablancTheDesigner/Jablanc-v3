@@ -20,7 +20,7 @@ export const Projects: JBProject[] = [
       illustrator: false,
       firebase: true
     },
-    url: "https://linkedin-clone-6fc78.firebaseapp.com/",
+    url: "https://linkedin-clone-6fc78.web.app/",
     featured: true,
     color: "#000000",
     type: ["development"],

@@ -63,7 +63,7 @@ const SelectedProject = (): ReactElement => {
                 </div>
 
                 {/* title */}
-                <h1 className="text-4xl font-bold tracking-tighter mb-2 text-white max-w-2xl absolute top-[var(--nav-height)] md:top-8 left-8">{selectedProject?.title}</h1>
+                <h1 className="text-4xl font-semibold tracking-tighter mb-2 text-white max-w-2xl absolute top-[var(--nav-height)] md:top-8 left-8">{selectedProject?.title}</h1>
 
                 
                 <div className="m-8 flex flex-col gap-8 w-1/">
