@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ReactElement } from "react";
 import { usePortfolioContext } from "../context/PortfolioContext";
-import { JBProject } from "../src/dataTypes";
+import Link from "next/link";
 import {
     GrClose
 } from 'react-icons/gr';
@@ -18,6 +18,7 @@ import {
 import {
     IoLogoFirebase
 } from 'react-icons/io5'
+
 
 
 const SelectedProject = (): ReactElement => {
@@ -91,16 +92,19 @@ const SelectedProject = (): ReactElement => {
                     </div>
                 </div>
 
-                {/* description */}
                 <div className="m-8 text-left max-w-2xl flex flex-col gap-8">
+                    {/* url */}
                     {selectedProject?.url && (
                         <div>
                             <h4 className={labelStyles}>Link</h4>
-                            <a href={selectedProject?.url} 
-                               target="_blank" 
-                               className="text-xl">{selectedProject?.url}</a>
+                            <Link href={selectedProject?.url}>
+                                <a target="_blank" 
+                                    className="text-xl">{selectedProject?.url}</a>
+                            </Link>
                         </div>
                     )}
+
+                    {/* description */}
                     <div>
                         <h4 className={labelStyles}>Description</h4>
                         {selectedProject?.description && (
