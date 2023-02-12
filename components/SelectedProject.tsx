@@ -92,14 +92,24 @@ const SelectedProject = (): ReactElement => {
                 </div>
 
                 {/* description */}
-                <div className="m-8 text-left max-w-2xl">
-                    <h4 className={labelStyles}>Description</h4>
-                    {selectedProject?.description && (
-                        <p className="text-xl">{selectedProject?.description}</p>
+                <div className="m-8 text-left max-w-2xl flex flex-col gap-8">
+                    {selectedProject?.url && (
+                        <div>
+                            <h4 className={labelStyles}>Link</h4>
+                            <a href={selectedProject?.url} 
+                               target="_blank" 
+                               className="text-xl">{selectedProject?.url}</a>
+                        </div>
                     )}
-                    {!selectedProject?.description && (
-                        <p className="text-3xl opacity-60">Coming Soon</p>
-                    )}
+                    <div>
+                        <h4 className={labelStyles}>Description</h4>
+                        {selectedProject?.description && (
+                            <p className="text-xl">{selectedProject?.description}</p>
+                        )}
+                        {!selectedProject?.description && (
+                            <p className="text-3xl opacity-60">Coming Soon</p>
+                        )}
+                    </div>
                 </div>
             </motion.div>
         </motion.div>
