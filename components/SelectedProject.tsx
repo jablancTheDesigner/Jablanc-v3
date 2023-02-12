@@ -29,7 +29,7 @@ const SelectedProject = (): ReactElement => {
         document.body.classList.remove('overflow-hidden');
     }
 
-    const labelStyles = "mb-2 text-sm uppercase font-bold";
+    const labelStyles = "mb-2 text-sm uppercase font-bold text-primary";
     
     return (
         <motion.div 
