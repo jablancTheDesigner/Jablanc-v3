@@ -4,7 +4,21 @@ import { usePortfolioContext } from "../context/PortfolioContext";
 import { JBProject } from "../src/dataTypes";
 import {
     GrClose
-  } from 'react-icons/gr';
+} from 'react-icons/gr';
+import {
+    DiHtml5,
+    DiSass,
+    DiReact,
+    DiCss3Full,
+    DiAngularSimple,
+    DiJavascript1,
+    DiPhotoshop,
+    DiIllustrator,
+} from 'react-icons/di';
+import {
+    IoLogoFirebase
+} from 'react-icons/io5'
+
 
 const SelectedProject = (): ReactElement => {
     const { selectedProject, setSelectedProject, setOpenProject } = usePortfolioContext()
@@ -14,11 +28,13 @@ const SelectedProject = (): ReactElement => {
         setSelectedProject(null);
         document.body.classList.remove('overflow-hidden');
     }
+
+    const labelStyles = "mb-2 text-sm uppercase font-bold";
     
     return (
         <motion.div 
             layoutId={selectedProject?.id}
-            className="fixed top-0 left-0 right-0 bottom-0 z-[70] flex items-end">
+            className="fixed top-0 left-0 right-0 bottom-0 z-[1000] flex items-end">
 
             {/* close button */}
             <motion.button 
@@ -48,14 +64,43 @@ const SelectedProject = (): ReactElement => {
                 {/* title */}
                 <h1 className="text-4xl font-bold tracking-tighter mb-2 text-white max-w-2xl absolute top-[var(--nav-height)] md:top-8 left-8">{selectedProject?.title}</h1>
 
-                {/* client */}
-                <div className="m-8 text-white">
-                    <h4 className="text-base">Client</h4>
-                    <h3 className="text-2xl font-bold">{selectedProject?.client}</h3>
+                
+                <div className="m-8 flex flex-col gap-8 w-1/">
+                    {/* client */}
+                    <div className="text-white">
+                        <h4 className={labelStyles}>Client</h4>
+                        {selectedProject?.client &&
+                            <h3 className="text-2xl">{selectedProject?.client}</h3>}
+                        {!selectedProject?.client &&
+                            <h3 className="text-2xl">Self</h3>}
+                    </div>
+                    {/* tools */}
+                    <div className="text-white">
+                        <h4 className={labelStyles}>Tools</h4>
+                        <div className="mt-4 flex gap-4 text-2xl mx-auto md:mx-0 ">
+                            {selectedProject?.tools.html && <DiHtml5 />}
+                            {selectedProject?.tools.sass && <DiSass />}
+                            {selectedProject?.tools.react && <DiReact />}
+                            {selectedProject?.tools.css && <DiCss3Full />}
+                            {selectedProject?.tools.angular && <DiAngularSimple />}
+                            {selectedProject?.tools.js && <DiJavascript1 />}
+                            {selectedProject?.tools.photoshop && <DiPhotoshop />}
+                            {selectedProject?.tools.illustrator && <DiIllustrator />}
+                            {selectedProject?.tools.firebase && <IoLogoFirebase />}
+                        </div>
+                    </div>
                 </div>
 
                 {/* description */}
-                <p className="text-xl m-8 text-left px-4 max-w-md">{selectedProject?.description}</p>
+                <div className="m-8 text-left max-w-2xl">
+                    <h4 className={labelStyles}>Description</h4>
+                    {selectedProject?.description && (
+                        <p className="text-xl">{selectedProject?.description}</p>
+                    )}
+                    {!selectedProject?.description && (
+                        <p className="text-3xl opacity-60">Coming Soon</p>
+                    )}
+                </div>
             </motion.div>
         </motion.div>
     )

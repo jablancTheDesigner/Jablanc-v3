@@ -1,6 +1,7 @@
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
 import Head from "next/head";
+import PageWrapper from "../components/PageWrapper";
 
 export default function Home() {
   const title: string = "Home";
@@ -15,12 +16,14 @@ export default function Home() {
         <meta name="description" content="Home" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Hero
-        title={helloText}
-        subTitle={heroText}
-        buttonText={heroButtonText}
-        bgText={bgWords}
-      />
+      <PageWrapper>
+        <Hero
+            title={helloText}
+            subTitle={heroText}
+            buttonText={heroButtonText}
+            bgText={bgWords}
+          />
+      </PageWrapper>
     </>
   );
 }

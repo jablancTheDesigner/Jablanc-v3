@@ -136,11 +136,6 @@ const Nav = (): ReactElement => {
                       </a>
                     </Link>
                   )}
-                  {/* {!link.active && (
-                    <button 
-                      className={`${linkClasses} opacity-30 hover:cursor-not-allowed hover:!bg-transparent hover:after:hidden line-through`}
-                      disabled={true}>{link.name}</button>
-                  )} */}
                 </>
               );
             })}

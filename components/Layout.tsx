@@ -12,7 +12,6 @@ const Layout = ({ children }): ReactElement => {
         <Nav />
         {children}
         <SocialLinks />
-        <Loader />
         <CurrentLocation />
     </PortfolioContextProvider>
   );

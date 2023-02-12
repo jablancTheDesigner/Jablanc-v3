@@ -5,7 +5,6 @@ export const Projects: JBProject[] = [
   {
     id: "1",
     title: "LinkedIn Clone",
-    client: "Me, Myself, and I",
     codeLink: "https://github.com/jablancTheDesigner/jpb-linkedin-clone",
     logo: null,
     thumbnail: null,
@@ -21,8 +20,6 @@ export const Projects: JBProject[] = [
       illustrator: false,
       firebase: true
     },
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga nam alias ullam illum minus in necessitatibus. ",
     url: "https://linkedin-clone-6fc78.firebaseapp.com/",
     featured: true,
     color: "#000000",
@@ -30,8 +27,7 @@ export const Projects: JBProject[] = [
   },
   {
     id: "2",
-    title: '"The Shop" E-Commerce',
-    client: "Me, Myself, and I",
+    title: 'E-Commerce App',
     codeLink: "https://github.com/jablancTheDesigner/puffessional",
     logo: null,
     thumbnail: null,
@@ -47,7 +43,6 @@ export const Projects: JBProject[] = [
       illustrator: false,
       firebase: true
     },
-    description: null,
     url: "https://puffessional.netlify.app/",
     featured: true,
     color: "#000000",
@@ -55,8 +50,7 @@ export const Projects: JBProject[] = [
   },
   {
     id: "3",
-    title: '"Yerrrp!" Public Forum ',
-    client: "Me, Myself, and I",
+    title: 'Blogging App',
     codeLink: "https://github.com/jablancTheDesigner/jpb-blog",
     logo: null,
     thumbnail: null,
@@ -72,8 +66,6 @@ export const Projects: JBProject[] = [
       illustrator: false,
       firebase: true
     },
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga nam alias ullam illum minus in necessitatibus. ",
     url: "https://jpb-blog.netlify.app/",
     featured: true,
     color: "#000000",
@@ -81,8 +73,7 @@ export const Projects: JBProject[] = [
   },
   {
     id: "4",
-    title: "Cool Navigation",
-    client: "Me, Myself, and I",
+    title: "Slide Out Navigation",
     codeLink: "https://github.com/jablancTheDesigner/minimalist-nav",
     logo: null,
     thumbnail: null,
@@ -98,8 +89,6 @@ export const Projects: JBProject[] = [
       illustrator: false,
       firebase: false
     },
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga nam alias ullam illum minus in necessitatibus. ",
     url: "https://jablancthedesigner.github.io/minimalist-nav/",
     featured: true,
     color: "#000000",
@@ -124,7 +113,6 @@ export const Projects: JBProject[] = [
       illustrator: true,
       firebase: false
     },
-    description: null,
     url: null,
     featured: true,
     color: "#000000",
@@ -133,7 +121,7 @@ export const Projects: JBProject[] = [
   {
     id: "6",
     title: "Kloud 9 Kicks",
-    client: "Jay",
+    client: "Gabe B.",
     codeLink: null,
     logo: null,
     thumbnail: null,
@@ -149,7 +137,6 @@ export const Projects: JBProject[] = [
       illustrator: true,
       firebase: false
     },
-    description: null,
     url: null,
     featured: true,
     color: "#000000",

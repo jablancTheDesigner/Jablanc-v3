@@ -3,8 +3,8 @@ import { AiTwotoneMail } from "react-icons/ai";
 import Link from "next/link";
 
 const links = [
-  { icon: <FaLinkedinIn />, address: "https://www.linkedin.com" },
-  { icon: <FaGithub />, address: "https://www.github.com" },
+  { icon: <FaLinkedinIn />, address: "https://www.linkedin.com/in/jahmal-blanchard-bb988433/" },
+  { icon: <FaGithub />, address: "https://github.com/jablancTheDesigner" },
   { icon: <AiTwotoneMail />, address: "mailto:jablancdesigns@gmail.com" },
 ];
 
@@ -18,7 +18,7 @@ function SocialLinks() {
               key={i}
               className="p-0 list-none text-2xl w-auto flex items-center">
               <Link href={link.address}>
-                <a className="app-button text-lg">{link.icon}</a>
+                <a className="app-button text-lg" target="_blank">{link.icon}</a>
               </Link>
             </li>
           );
