@@ -92,7 +92,7 @@ export const Projects: JBProject[] = [
     url: "https://jablancthedesigner.github.io/minimalist-nav/",
     featured: true,
     color: "#000000",
-    type: ["logo"],
+    type: ["development"],
   },
   {
     id: "5",
@@ -116,7 +116,7 @@ export const Projects: JBProject[] = [
     url: null,
     featured: true,
     color: "#000000",
-    type: ["logo"],
+    type: ["branding"],
   },
   {
     id: "6",
@@ -140,6 +140,6 @@ export const Projects: JBProject[] = [
     url: null,
     featured: true,
     color: "#000000",
-    type: ["logo"],
+    type: ["branding"],
   },
 ];

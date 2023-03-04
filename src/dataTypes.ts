@@ -27,7 +27,7 @@ export type JBTools =
   | "Photoshop"
   | "Illustrator";
 
-export type JBProjectType = "development" | "logo" | "design" | "print";
+export type JBProjectType = "development" | "branding" | "design" | "print";
 
 export interface JBProject {
   id?: string;

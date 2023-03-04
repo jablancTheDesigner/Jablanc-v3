@@ -57,3 +57,17 @@ h5,
 h6 {
   font-family: var(--ff-custom);
 }
+
+.text-comma-format{
+  p {
+    &::after {
+      content: ",";
+      margin-right: 6px;
+    }
+    &:last-of-type {
+      &::after{
+        content: ""
+      }
+    }
+  }
+}

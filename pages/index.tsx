@@ -16,14 +16,12 @@ export default function Home() {
         <meta name="description" content="Home" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <PageWrapper>
-        <Hero
-            title={helloText}
-            subTitle={heroText}
-            buttonText={heroButtonText}
-            bgText={bgWords}
-          />
-      </PageWrapper>
+      <Hero
+          title={helloText}
+          subTitle={heroText}
+          buttonText={heroButtonText}
+          bgText={bgWords}
+        />
     </>
   );
 }

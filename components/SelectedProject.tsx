@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ReactElement } from "react";
+import { ReactElement, ReactNode, useEffect } from "react";
 import { usePortfolioContext } from "../context/PortfolioContext";
 import Link from "next/link";
 import {
@@ -18,8 +18,12 @@ import {
 import {
     IoLogoFirebase
 } from 'react-icons/io5'
+import { JBProject } from "../src/dataTypes";
 
-
+type SelectProjectProps = {
+    children?: ReactNode;
+    project?: JBProject
+}
 
 const SelectedProject = (): ReactElement => {
     const { selectedProject, setSelectedProject, setOpenProject } = usePortfolioContext()
@@ -31,10 +35,9 @@ const SelectedProject = (): ReactElement => {
     }
 
     const labelStyles = "mb-2 text-sm uppercase font-bold text-primary";
-    
+
     return (
         <motion.div 
-            layoutId={selectedProject?.id}
             className="fixed top-0 left-0 right-0 bottom-0 z-[1000] flex items-end">
 
             {/* close button */}

@@ -1,15 +1,19 @@
 import Head from "next/head";
-import { useState, useEffect, Suspense } from "react";
-import Body from "../components/Body";
-import Layout from "../components/Layout";
-import PageWrapper from "../components/PageWrapper";
+import { useEffect } from "react";
 import ProjectsList from "../components/ProjectsList";
 import { usePortfolioContext } from "../context/PortfolioContext";
-import { JBProject } from "../src/dataTypes";
-import { getProjects, getProjectsById } from "../src/projectsService";
+import { getProjects } from "../src/projectsService";
 
 export default function Projects() {
   const pageTite = "Projects";
+  const {setProjects, setIsLoaded} = usePortfolioContext();
+
+  useEffect( () => {
+    getProjects().then( data => {
+        setProjects(data.projects);
+        setIsLoaded(true);
+    })
+  }, [])
 
   return (
     <>
@@ -18,9 +22,7 @@ export default function Projects() {
         <meta name="description" content="Projects" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <PageWrapper>
-        <ProjectsList />
-      </PageWrapper>
+      <ProjectsList />
     </>
   );
 }

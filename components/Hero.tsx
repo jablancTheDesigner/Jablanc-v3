@@ -1,4 +1,4 @@
-import { FC, ReactElement, Suspense, useContext, useState } from "react";
+import { ReactElement, Suspense } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { JBHeaderType, JBButtonType, JBHeroType } from "../src/dataTypes";

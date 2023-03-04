@@ -1,11 +1,10 @@
 import { FC, ReactNode } from 'react';
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { JBProject } from '../src/dataTypes';
-import { getProjects, } from '../src/projectsService';
 
 interface PortfolioContext {
     projects: JBProject[];
-    setProjects: (data: []) => void;
+    setProjects: (data: JBProject[]) => void;
     layoutStyle: string;
     setLayoutStyle: (layout: string) => void;
     layoutControls: boolean;
@@ -14,8 +13,8 @@ interface PortfolioContext {
     setLoading: (isLoading: boolean) => void;
     openProject: boolean;
     setOpenProject: (isOpen: boolean) => void;
-    selectedProject: JBProject;
-    setSelectedProject: (project: JBProject) => void;
+    selectedProject: JBProject | undefined;
+    setSelectedProject: (project: JBProject | undefined) => void;
     navIsOpen: boolean;
     setNavIsOpen: (isOpen: boolean) => void;
     activateBg: boolean;
@@ -61,13 +60,6 @@ const PortfolioContextProvider : FC<Props> = ({ children }) => {
         isLoaded,
         setIsLoaded
     }
-
-    useEffect( () => {
-        getProjects().then( data => {
-            setProjects(data.projects);
-            setIsLoaded(true);
-        })
-    }, [])
 
     return (
         <PortfolioContext.Provider value={portfolioState}>

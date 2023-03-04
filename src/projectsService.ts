@@ -20,6 +20,6 @@ export async function getProjects(): Promise<JBProjectsResponse> {
 
 export async function getProjectsById(id: any) : Promise<JBProjectResponse> {
   const response = await fetch(URL+id);
-  console.log(response)
-  return response.json();
+  const data = await response.json();
+  return data;
 }
