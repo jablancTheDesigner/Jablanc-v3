@@ -19,7 +19,7 @@ import {
 
 export const TechUsed = (): ReactElement => {
   return (
-    <motion.div className="text-2xl flex flex-wrap items-start gap-10 md:flex-row relative mt-8 md:mb-0 mb-8 md:justify-center justify-start text-white">
+    <motion.div className="text-3xl flex flex-wrap items-start gap-6 md:gap-10 md:flex-row relative mt-8 md:mb-0 mb-8 md:justify-center justify-start text-white pr-8 md:pr-0">
       <p><DiHtml5 /></p>
       <p><DiSass /></p>
       <p><DiReact /></p>
