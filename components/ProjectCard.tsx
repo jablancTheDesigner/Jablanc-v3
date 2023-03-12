@@ -41,7 +41,7 @@ const ProjectCard = ({ content }: JBCard): ReactElement => {
 
           {/*  Title */}
           <motion.h2
-            className="md:text-4xl text-3xl tracking-tight font-league-spartan font-bold text-left text-white">
+            className="md:text-4xl text-3xl tracking-tight font-league-spartan font-bold md:text-left text-center text-white">
             {content.title}
           </motion.h2>
 
