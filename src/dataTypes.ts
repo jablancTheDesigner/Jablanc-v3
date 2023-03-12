@@ -52,7 +52,7 @@ export interface JBProject {
   url?: string;
   featured?: boolean;
   color?: string;
-  type?: JBProjectType[];
+  type?: JBProjectType;
 }
 
 export interface JBProjectsList {

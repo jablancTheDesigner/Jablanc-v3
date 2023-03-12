@@ -52,7 +52,7 @@ const Nav = (): ReactElement => {
 
   return (
     <header>
-      <nav className="fixed flex w-full text-dark p-0 z-[999]">
+      <nav className="absolute flex w-full text-dark p-0 z-[999]">
         <div className="container mx-auto relative flex justify-between">
           <Link href="/">
             <a className={`px-4 py-0 flex items-center justify-center w-[75px] fill-white left-0 top-0 h-[var(--nav-height)] ${open ? "fill-dark" : "fill-white"}`}>

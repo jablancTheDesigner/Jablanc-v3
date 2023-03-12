@@ -36,14 +36,14 @@ export default function SingleProject() {
   },[])
 
   return (
-    <div className="flex w-full bg-dark min-h-screen py-[var(--nav-height)]">
+    <div className="flex w-full bg-dark py-[var(--nav-height)] min-h-screen">
 
     {/* content */}
     <div className="container mx-auto px-4 relative max-w-6xl">
 
         {/* image */}
         {project?.thumbnail && (
-          <div className="opacity-20 w-full h-80 overflow-hidden"
+          <div className="opacity-20 w-full h-80 overflow-hidden mb-16"
             style={{
               backgroundRepeat: 'no-repeat',
               backgroundSize: 'cover',
@@ -53,10 +53,10 @@ export default function SingleProject() {
           </div>
         )}
 
-        <div className='flex flex-col gap-16 my-16'>
+        <div className='flex flex-col gap-16'>
           <div className='flex justify-center align-middle'>
             {/* title */}
-            <h1 className="text-7xl font-semibold tracking-tighter text-white  w-full max-w-lg text-center">
+            <h1 className="text-5xl font-semibold uppercase tracking-tighter text-white  w-full max-w-lg text-center">
               {project?.title}
             </h1>
           </div>
@@ -68,9 +68,10 @@ export default function SingleProject() {
                 <div className="text-white flex flex-col text-center w-full justify-center px-4 py-12 bg-darker">
                     <h4 className={labelStyles}>Category</h4>
                     <div className='my-auto'>
-                      {project?.type.length && project?.type.map((category, idx) => {
-                        return <h3 className="text-xl md:text-2xl font-light mx-auto capitalize" key={idx}>{category}</h3>
-                      })}
+                      {project?.type && (
+                        <h3 className="text-xl md:text-2xl font-light mx-auto capitalize">
+                          {project?.type}</h3>
+                      )}
                     </div>
                 </div>
                 {/* client */}

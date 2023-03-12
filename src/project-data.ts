@@ -23,7 +23,7 @@ export const Projects: JBProject[] = [
     url: "https://linkedin-clone-6fc78.web.app/",
     featured: true,
     color: "#000000",
-    type: ["development"],
+    type: "development",
   },
   {
     id: "2",
@@ -46,7 +46,7 @@ export const Projects: JBProject[] = [
     url: "https://puffessional.netlify.app/",
     featured: true,
     color: "#000000",
-    type: ["development"],
+    type: "development",
   },
   {
     id: "3",
@@ -69,7 +69,7 @@ export const Projects: JBProject[] = [
     url: "https://jpb-blog.netlify.app/",
     featured: true,
     color: "#000000",
-    type: ["development"],
+    type: "development",
   },
   {
     id: "4",
@@ -92,7 +92,7 @@ export const Projects: JBProject[] = [
     url: "https://jablancthedesigner.github.io/minimalist-nav/",
     featured: true,
     color: "#000000",
-    type: ["development"],
+    type: "development",
   },
   {
     id: "5",
@@ -116,7 +116,7 @@ export const Projects: JBProject[] = [
     url: null,
     featured: true,
     color: "#000000",
-    type: ["branding"],
+    type: "branding",
   },
   {
     id: "6",
@@ -140,6 +140,6 @@ export const Projects: JBProject[] = [
     url: null,
     featured: true,
     color: "#000000",
-    type: ["branding"],
+    type: "branding",
   },
 ];

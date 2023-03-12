@@ -17,9 +17,16 @@ import {
 import {
   IoLogoFirebase
 } from 'react-icons/io5'
+import {
+  AiFillGithub
+} from 'react-icons/ai';
+import {
+  FiExternalLink
+} from 'react-icons/fi';
+import Link from "next/link";
 
 const ProjectCard = ({ content }: JBCard): ReactElement => {
-  const ProjectCardStyles = "cursor-pointer relative flex justify-between items-center hover:bg-primary hover:text-dark text-white p-8 bg-darker"
+  const ProjectCardStyles = "relative flex md:flex-row flex-col justify-between items-center text-white p-8 bg-darker uppercase md:flex"
 
   return (
     <motion.div
@@ -34,12 +41,12 @@ const ProjectCard = ({ content }: JBCard): ReactElement => {
 
           {/*  Title */}
           <motion.h2
-            className="md:text-4xl text-2xl tracking-tight font-league-spartan font-medium text-left">
+            className="md:text-4xl text-3xl tracking-tight font-league-spartan font-bold text-left text-white">
             {content.title}
           </motion.h2>
 
           {/* Content */}
-          <div className="mt-4 flex gap-4 text-2xl mx-auto md:mx-0">
+          <div className="mt-4 flex gap-4 text-2xl mx-auto md:mx-0 justify-center md:justify-start">
             {content.tools.html && <DiHtml5 />}
             {content.tools.sass && <DiSass />}
             {content.tools.react && <DiReact />}
@@ -53,9 +60,23 @@ const ProjectCard = ({ content }: JBCard): ReactElement => {
 
         </div>
 
-       <span className="text-2xl">
-        <MdOutlineArrowForwardIos />
-       </span>
+        <div className="text-xl flex flex-col text-right gap-4 md:items-end items-center mt-4 md:mt-0">
+          {content.codeLink && (
+            <a href={content.codeLink} 
+              className="flex gap-2 hover:opacity-60"
+              target="_blank" rel="noreferrer">Code <AiFillGithub /></a>
+          )}
+          {content.url && (
+            <a href={content.url} 
+              className="flex gap-2 hover:opacity-60"
+              target="_blank" rel="noreferrer">Live Demo <FiExternalLink /></a>
+          )}
+          {content.type == 'branding' && (
+            <Link href={`/project/${content.id}`}>
+              <a className="flex gap-2 hover:opacity-60" >Case Study <MdOutlineArrowForwardIos /></a>
+            </Link>
+          )}
+        </div>
         
     </motion.div>
   );

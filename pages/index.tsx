@@ -6,7 +6,7 @@ import PageWrapper from "../components/PageWrapper";
 export default function Home() {
   const title: string = "Home";
   const helloText: string = `Hi I'm Jahmal`;
-  const heroText: string = "Developer & Designer";
+  const heroText: string = "Frontend Engineer & Graphic Designer";
   const heroButtonText: string = "The Work";
   const bgWords: string[] = ["FrontEnd", "Developer", "Designer", "Engineer"];
   return (
