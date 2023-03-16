@@ -19,7 +19,7 @@ import {
 
 export const TechUsed = (): ReactElement => {
   return (
-    <motion.div className="text-3xl flex flex-wrap items-start gap-6 md:gap-10 md:flex-row relative mt-8 md:mb-0 mb-8 md:justify-center justify-start text-white pr-8 md:pr-0">
+    <motion.div className="text-3xl relative mt-8 md:mb-0 mb-8 md:justify-center justify-start text-white grid grid-cols-4 md:flex flex-wrap items-center gap-4 md:gap-8 md:max-w-full">
       <p><DiHtml5 /></p>
       <p><DiSass /></p>
       <p><DiReact /></p>
@@ -86,9 +86,9 @@ const Hero = ({
   buttonText,
 }: JBHeroType): ReactElement => {
   return (
-    <div className="hero bg-dark">
-      <div className="container mx-auto min-h-screen relative flex flex-col items-center justify-center">
-        <div className="relative flex max-w-lg md:max-w-xl lg:max-w-3xl flex-col z-10 mx-auto">
+    <div className="hero bg-dark h-full py-[var(--nav-height)] flex flex-col items-center justify-center">
+      <div className="container mx-auto relative flex flex-col items-center justify-center px-4">
+        <div className="relative flex max-w-md md:max-w-xl lg:max-w-3xl flex-col z-10 mx-auto md:w-full ">
             <TitleText title={title} subTitle={subTitle} />
             <ProjectButton title={buttonText} text={buttonText} />
         </div>

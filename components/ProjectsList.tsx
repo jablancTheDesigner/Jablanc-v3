@@ -21,7 +21,7 @@ const ProjectsList = (): ReactElement => {
   }
 
   return (
-      <div className="min-h-screen flex text-primary font-league-spartan w-full bg-dark">
+      <div className="min-h-full flex text-primary font-league-spartan w-full bg-dark">
         <div className="container mx-auto px-4 relative max-w-7xl">
           <div className="lg:gap-8 flex lg:flex-row flex-col">
               <motion.div 
