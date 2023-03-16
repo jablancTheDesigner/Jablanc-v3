@@ -72,7 +72,7 @@ export const ProjectButton = ({ title, text }: JBButtonType): ReactElement => {
 
 export const HeroBg = (): ReactElement => {
   return (
-    <div className="hero__background absolute left-0 top-0 leading-[0.7] text-center w-screen h-screen overflow-hidden flex flex-col  break-all justify-center">
+    <div className="hero__background absolute left-0 top-0 leading-[0.7] text-center w-screen h-full overflow-hidden flex flex-col  break-all justify-center">
     </div>
   );
 };
