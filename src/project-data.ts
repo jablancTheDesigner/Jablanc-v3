@@ -100,7 +100,7 @@ export const Projects: JBProject[] = [
     client: "Jay",
     codeLink: null,
     logo: null,
-    thumbnail: null,
+    thumbnail: "https://i.ibb.co/PwvxfRm/JV-Photography.jpg",
     gallery: [],
     tools: {
       react: false,
@@ -124,7 +124,7 @@ export const Projects: JBProject[] = [
     client: "Gabe B.",
     codeLink: null,
     logo: null,
-    thumbnail: null,
+    thumbnail: "https://i.ibb.co/YL5SBms/Kloud-9-Kicks.jpg",
     gallery: [],
     tools: {
       react: false,
