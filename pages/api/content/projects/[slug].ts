@@ -5,10 +5,10 @@ import {
 import { Projects } from "../../../../src/project-data";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-    const { id } = req.query
+    const { slug } = req.query
     res.status(200).json({
         method: req.method,
-        slug: id,
-        project: Projects.find(project => project.id == id)
+        slug: slug,
+        project: Projects.find(project => project.slug == slug)
     });
 }

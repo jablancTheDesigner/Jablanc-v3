@@ -1,7 +1,7 @@
 import { JBProject } from '../../src/dataTypes';
 import { useState,useEffect } from 'react';
 import { useRouter } from "next/router";
-import { getProjectsById } from '../../src/projectsService';
+import { getProjectsBySlug } from '../../src/projectsService';
 import { usePortfolioContext } from '../../context/PortfolioContext';
 import {
   DiHtml5,
@@ -24,29 +24,30 @@ export default function SingleProject() {
   const {selectedProject} = usePortfolioContext(); 
   const [project, setProject] = useState<JBProject>(selectedProject ?? undefined);
   const router = useRouter();
-  const {id} = router.query;
-  console.log(id)
+  const {slug} = router.query;
 
   const labelStyles = "mb-2 text-base uppercase font-bold text-primary";
 
   useEffect(() => {
+    console.log(selectedProject)
     if(!selectedProject){
       console.log('Fetch project')
-      getProjectsById(id).then(data => {
+      getProjectsBySlug(slug as string).then(data => {
         setProject(data.project);
+        console.log(data.project as JBProject)
       });
     }
   },[])
 
   return (
-    <div className="w-full bg-dark py-[var(--nav-height)] min-h-screen">
-      <div className='container mx-auto flex max-w-6xl py-4 border-b-2 border-white mb-8'>
+    <div className="w-full bg-dark py-[var(--nav-height)] min-h-screen flex flex-col gap-8">
+      <div className='container mx-auto flex max-w-6xl py-4 border-b-2 border-white'>
         <Link href="/projects">
-          <a className='mr-auto font-bold text-white flex items-center gap-2 px-4'><AiOutlineArrowLeft /> To all  projects</a>
+          <a className='mr-auto font-bold text-white flex items-center gap-2 px-4'><AiOutlineArrowLeft /> All  projects</a>
         </Link>
       </div>
 
-      <div className='flex justify-center align-middle container max-w-6xl mx-auto mb-8'>
+      <div className='flex justify-center align-middle container max-w-6xl mx-auto px-4'>
         {/* title */}
         <h1 className="text-5xl font-semibold uppercase tracking-tighter text-white  w-full max-w-lg text-center">
           {project?.title}
@@ -55,7 +56,7 @@ export default function SingleProject() {
       
 
       {/* content */}
-      <div className="container mx-auto px-4 relative max-w-6xl flex md:flex-row flex-col  gap-8">
+      <div className="container mx-auto px-4 relative max-w-6xl flex md:flex-row flex-col gap-8">
 
         {/* image */}
         {project?.thumbnail && (
@@ -111,7 +112,7 @@ export default function SingleProject() {
       </div>
 
       {/* description */}
-      <div className="w-full max-w-2xl mx-auto my-8">
+      <div className="w-full max-w-2xl mx-auto">
           {project?.description && (
               <p className="text-base text-white ">{project?.description}</p>
           )}

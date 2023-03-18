@@ -1,3 +1,4 @@
+import { generateSlug } from './../utilities/utilityFunctions';
 export interface JBHeaderType {
   title: string;
   subTitle: string;
@@ -29,8 +30,19 @@ export type JBTools =
 
 export type JBProjectType = "development" | "branding" | "design" | "print";
 
+export interface JBProjectsList {
+  title: string;
+  subTitle: string;
+  projects: JBProject[];
+}
+
+export interface JBCard {
+  content: JBProject;
+}
+
 export interface JBProject {
   id?: string;
+  slug?: string;
   title?: string;
   client?: string;
   codeLink?: string;
@@ -47,20 +59,10 @@ export interface JBProject {
     photoshop: boolean,
     illustrator: boolean,
     firebase: boolean
-  },
+  };
   description?: string;
   url?: string;
   featured?: boolean;
   color?: string;
   type?: JBProjectType;
-}
-
-export interface JBProjectsList {
-  title: string;
-  subTitle: string;
-  projects: JBProject[];
-}
-
-export interface JBCard {
-  content: JBProject;
 }

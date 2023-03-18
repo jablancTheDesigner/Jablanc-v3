@@ -18,8 +18,8 @@ export async function getProjects(): Promise<JBProjectsResponse> {
   return response.json();
 }
 
-export async function getProjectsById(id: any) : Promise<JBProjectResponse> {
-  const response = await fetch(URL+id);
+export async function getProjectsBySlug(slug: string) : Promise<JBProjectResponse> {
+  const response = await fetch(URL+slug);
   const data = await response.json();
   return data;
 }

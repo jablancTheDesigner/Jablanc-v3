@@ -1,10 +1,12 @@
 import { JBProject } from "./dataTypes";
 import { v4 as uuidv4 } from "uuid";
+import {generateSlug} from '../utilities/utilityFunctions'
 
 export const Projects: JBProject[] = [
   {
     id: "1",
     title: "Slide Out Navigation",
+    slug: generateSlug("Slide Out Navigation"),
     codeLink: "https://github.com/jablancTheDesigner/minimalist-nav",
     logo: null,
     thumbnail: null,
@@ -28,6 +30,7 @@ export const Projects: JBProject[] = [
   {
     id: "2",
     title: "Task Manager",
+    slug: generateSlug("Task Manager"),
     codeLink: "https://github.com/jablancTheDesigner/goals-task-todos",
     logo: null,
     thumbnail: null,
@@ -51,6 +54,7 @@ export const Projects: JBProject[] = [
   {
     id: "3",
     title: "LinkedIn Clone",
+    slug: generateSlug("LinkedIn Clone"),
     codeLink: "https://github.com/jablancTheDesigner/jpb-linkedin-clone",
     logo: null,
     thumbnail: null,
@@ -74,6 +78,7 @@ export const Projects: JBProject[] = [
   {
     id: "4",
     title: 'E-Commerce App',
+    slug: generateSlug("E-Commerce App"),
     codeLink: "https://github.com/jablancTheDesigner/puffessional",
     logo: null,
     thumbnail: null,
@@ -96,7 +101,8 @@ export const Projects: JBProject[] = [
   },
   {
     id: "5",
-    title: "Jay Photography",
+    title: "JV Snapshot",
+    slug: generateSlug("JV Snapshot"),
     client: "Jay",
     codeLink: null,
     logo: null,
@@ -121,6 +127,7 @@ export const Projects: JBProject[] = [
   {
     id: "6",
     title: "Kloud 9 Kicks",
+    slug: generateSlug("Kloud 9 Kicks"),
     client: "Gabe B.",
     codeLink: null,
     logo: null,

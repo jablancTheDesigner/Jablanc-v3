@@ -72,7 +72,7 @@ const ProjectCard = ({ content }: JBCard): ReactElement => {
               target="_blank" rel="noreferrer">Live Demo <FiExternalLink /></a>
           )}
           {content.type == 'branding' && (
-            <Link href={`/project/${content.id}`}>
+            <Link href={`/project/${content.slug}`}>
               <a className="flex gap-2 hover:opacity-60" >Case Study <MdOutlineArrowForwardIos /></a>
             </Link>
           )}
