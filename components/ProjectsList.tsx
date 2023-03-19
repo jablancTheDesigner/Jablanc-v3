@@ -13,8 +13,7 @@ const ProjectsList = (): ReactElement => {
     selectedProject,
     setSelectedProject, 
   } = usePortfolioContext();
-  const pageTite = "Projects";
-  const pageSubTitle = "Having worked in many technologies, platforms, and content managment sytems, here are a few projects showcasing my experience.";
+  const pageTite = "Some Things I’ve Built";
 
   const handleSelect = (project: JBProject) => {
     setSelectedProject(project)
@@ -23,20 +22,17 @@ const ProjectsList = (): ReactElement => {
   return (
       <div className="min-h-full flex text-primary font-league-spartan w-full bg-dark">
         <div className="container mx-auto px-4 relative max-w-7xl">
-          <div className="lg:gap-8 flex lg:flex-row flex-col">
+          <div className="gap-4 lg:gap-8 flex lg:flex-row flex-col">
               <motion.div 
                   transition={{ type: "spring", stiffness: 400, damping: 17 }}
                   initial={{ scale: 0 }}
                   whileInView={{ scale: [0, 1], offset: 100 }}
                   className="lg:w-1/3 w-full">
-                <div className="lg:sticky md:top-[calc(var(--nav-height)+2rem)] mb-8 md:mb-0 flex flex-col py-8 lg:h-[calc(100vh-(var(--nav-height)*2)-2rem)] h-auto">
+                <div className="lg:sticky md:top-[calc(var(--nav-height)+2rem)] flex flex-col py-8 lg:h-[calc(100vh-(var(--nav-height)*2)-2rem)] h-auto">
                   <div className="md:mb-auto text-6xl md:ml-0 pt-[var(--nav-height)] lg:text-left text-center ">
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl mt-auto font-semibold tracking-tight text-white drop-shadow-md mb-4 uppercase">
+                    <h1 className="text-5xl md:text-6xl lg:text-7xl mt-auto font-semibold tracking-tight text-white drop-shadow-md uppercase">
                       {pageTite}
                     </h1>
-                    <p className="text-base md:text-2xl text-white/70 max-w-md mx-auto lg:mx-0">
-                      {pageSubTitle}
-                    </p>
                   </div>
                 </div>
               </motion.div>
