@@ -32,7 +32,7 @@ export const TechUsed = (): ReactElement => {
   )
 }
 
-export const TitleText = ({ title, subTitle }: JBHeaderType): ReactElement => {
+export const TitleTextAnimated = ({ title, subTitle }: JBHeaderType): ReactElement => {
   return (
     <>
       <motion.div
@@ -50,6 +50,24 @@ export const TitleText = ({ title, subTitle }: JBHeaderType): ReactElement => {
         </h2>
         <TechUsed />
       </motion.div>
+    </>
+  );
+};
+
+export const TitleText = ({ title, subTitle }: JBHeaderType): ReactElement => {
+  return (
+    <>
+      <div className="text-white z-2 relative py-4 md:py-8 font-league-spartan md:text-center px-4">
+        <h4 className="block text-xl md:text-3xl lg:text-4xl mb-4 text-white" data-testid="heading">
+          {title}
+        </h4>
+        <h2
+          className="text-5xl md:text-5xl lg:text-6xl tracking-tight font-bold leading-[0.85] uppercase"
+          data-testid="sub-heading">
+          {subTitle}
+        </h2>
+        <TechUsed />
+      </div>
     </>
   );
 };
