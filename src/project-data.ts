@@ -53,30 +53,6 @@ export const Projects: JBProject[] = [
   },
   {
     id: "3",
-    title: "LinkedIn Clone",
-    slug: generateSlug("LinkedIn Clone"),
-    codeLink: "https://github.com/jablancTheDesigner/jpb-linkedin-clone",
-    logo: null,
-    thumbnail: null,
-    gallery: [],
-    tools: {
-      react: true,
-      sass: true,
-      css: false,
-      html: false,
-      js: true,
-      angular: false,
-      photoshop: false,
-      illustrator: false,
-      firebase: true
-    },
-    url: "https://linkedin-clone-6fc78.web.app/",
-    featured: true,
-    color: "#000000",
-    type: "development",
-  },
-  {
-    id: "4",
     title: 'E-Commerce App',
     slug: generateSlug("E-Commerce App"),
     codeLink: "https://github.com/jablancTheDesigner/puffessional",
@@ -100,7 +76,7 @@ export const Projects: JBProject[] = [
     type: "development",
   },
   {
-    id: "5",
+    id: "4",
     title: "JV Snapshot",
     slug: generateSlug("JV Snapshot"),
     client: "Jay",
@@ -125,7 +101,7 @@ export const Projects: JBProject[] = [
     type: "branding",
   },
   {
-    id: "6",
+    id: "5",
     title: "Kloud 9 Kicks",
     slug: generateSlug("Kloud 9 Kicks"),
     client: "Gabe B.",
