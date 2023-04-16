@@ -1,6 +1,7 @@
 import { FC, ReactNode } from 'react';
 import { createContext, useContext, useState } from 'react';
 import { JBProject } from '../src/dataTypes';
+import { Projects } from '../src/project-data';
 
 interface PortfolioContext {
     projects: JBProject[];
@@ -30,7 +31,7 @@ type Props = {
 }
 
 const PortfolioContextProvider : FC<Props> = ({ children }) => {
-    const [projects, setProjects] = useState<JBProject[]>([]);
+    const [projects, setProjects] = useState<JBProject[]>(Projects);
     const [layoutStyle, setLayoutStyle] = useState<string>("row");
     const [layoutControls, setLayoutControls] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(false); 

@@ -6,14 +6,6 @@ import { getProjects } from "../src/projectsService";
 
 export default function Projects() {
   const pageTite = "Projects";
-  const {setProjects, setIsLoaded} = usePortfolioContext();
-
-  useEffect( () => {
-    getProjects().then( data => {
-        setProjects(data.projects);
-        setIsLoaded(true);
-    })
-  }, [])
 
   return (
     <>
