@@ -41,7 +41,7 @@ export default function SingleProject() {
 
   return (
     <div className="w-full bg-dark py-[var(--nav-height)] min-h-screen flex flex-col gap-8">
-      <div className='container mx-auto flex max-w-6xl py-4 border-b-2 border-white'>
+      <div className='container mx-auto flex max-w-5xl py-4 border-b-2 border-white'>
         <Link href="/projects">
           <a className='mr-auto font-bold text-white flex items-center gap-2 px-4'><AiOutlineArrowLeft /> All  projects</a>
         </Link>
@@ -56,16 +56,16 @@ export default function SingleProject() {
       
 
       {/* content */}
-      <div className="container mx-auto px-4 relative max-w-6xl flex md:flex-row flex-col gap-8">
+      <div className="container mx-auto px-4 relative max-w-5xl flex md:flex-row flex-col gap-8">
 
         {/* image */}
         {project?.thumbnail && (
-          <div className='mx-auto relative md:w-1/2'>
+          <div className='mx-auto relative md:w-1/2 md:min-w-[50%]'>
             <img src={project.thumbnail} />
           </div>
         )}
 
-        <div className='flex flex-col gap-8 flex-1'>
+        <div className='flex flex-col gap-8 md:w-1/2 md:ml-auto'>
 
           {/* Client, tools, and description */}
           <div className="w-full flex flex-col gap-4">
@@ -77,16 +77,6 @@ export default function SingleProject() {
                     <h3 className="text-xl md:text-2xl font-light mx-auto capitalize">
                       {project?.type}</h3>
                   )}
-                </div>
-            </div>
-            {/* client */}
-            <div className="text-white flex flex-col text-left w-full justify-center p-4 bg-darker">
-                <h4 className={labelStyles}>Client</h4>
-                <div className='my-auto'>
-                  {project?.client 
-                    ? <h3 className="text-xl md:text-2xl font-light mx-auto">{project?.client}</h3>
-                    : <h3 className="text-xl md:text-2xl font-light mx-auto">Self</h3>
-                  }
                 </div>
             </div>
             {/* END client */}
@@ -106,21 +96,20 @@ export default function SingleProject() {
                 </div>
             </div>
             {/* END tools */}
+            {/* description */}
+            <div className="w-full max-w-2xl mx-auto px-4">
+                {project?.description && (
+                    <p className="text-base text-white">{project?.description}</p>
+                )}
+                {!project?.description && (
+                    <p className="text-base text-white">Description Coming Soon.</p>
+                )}
+            </div>
+            {/* END description */}
           </div>
           {/* END Client, tools, and description */}
         </div>
       </div>
-
-      {/* description */}
-      <div className="w-full max-w-2xl mx-auto">
-          {project?.description && (
-              <p className="text-base text-white ">{project?.description}</p>
-          )}
-          {!project?.description && (
-              <p className="text-base text-white text-center">Description Coming Soon.</p>
-          )}
-      </div>
-      {/* END description */}
   </div>
   )
 }
