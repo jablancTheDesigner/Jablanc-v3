@@ -33,7 +33,7 @@ export const Projects: JBProject[] = [
     slug: generateSlug("Task Manager"),
     codeLink: "https://github.com/jablancTheDesigner/goals-task-todos",
     logo: null,
-    thumbnail: "https://i.ibb.co/pbbBKF4/puffessional-netlify-app-1024x768desktop-09d30a.png",
+    thumbnail: "https://i.ibb.co/c89Th91/goals-tasks-todos-netlify-app-1024x768desktop-e01c40.png",
     gallery: [],
     tools: {
       react: true,
@@ -57,7 +57,7 @@ export const Projects: JBProject[] = [
     slug: generateSlug("E-Commerce App"),
     codeLink: "https://github.com/jablancTheDesigner/puffessional",
     logo: null,
-    thumbnail: "https://i.ibb.co/c89Th91/goals-tasks-todos-netlify-app-1024x768desktop-e01c40.png",
+    thumbnail: "https://i.ibb.co/pbbBKF4/puffessional-netlify-app-1024x768desktop-09d30a.png",
     gallery: [],
     tools: {
       react: true,
