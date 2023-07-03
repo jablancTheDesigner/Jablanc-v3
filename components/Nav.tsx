@@ -1,10 +1,11 @@
 import { useState, ReactElement } from "react";
 import Link from "next/link";
 import { usePortfolioContext } from "../context/PortfolioContext";
+import NavLinks from "./NavLinks";
 
 const links = [
-  { url: "/", name: "Home", active: true },
-  { url: "/projects", name: "Projects", active: true },
+  { url: "#top", name: "Home", active: true },
+  { url: "#projectList", name: "Projects", active: true },
   { url: "/blog", name: "Blog", active: false },
   { url: "/contact", name: "Contact", active: false },
 ];
@@ -52,16 +53,16 @@ const Nav = (): ReactElement => {
 
   return (
     <header>
-      <nav className="absolute flex w-full text-dark p-0 z-[999]">
-        <div className="container mx-auto relative flex justify-between">
+      <nav className="fixed w-full text-dark p-0 z-[999] p-8">
+        <div className="mx-auto relative flex w-full justify-between items-start">
           <Link href="/">
             <a className={`px-4 py-0 flex items-center justify-center w-[75px] fill-white left-0 top-0 h-[var(--nav-height)] ${open ? "fill-dark" : "fill-white"}`}>
               <Logo />
             </a>
           </Link>
-          <div className={`flex ml-auto z-[999] h-[var(--nav-height)]`}>
+          <div className={`flex flex-col ml-auto z-[999] h-[var(--nav-height)] text-right pt-2`}>
             <button
-              className={`w-16 m-auto relative z-[9] appearance-none cursor-pointer opacity-100 !px-4 py-0 flex h-full items-center justify-center text-center hover:opacity-80 ${open ? "fill-dark" : "fill-white"}`}
+              className={`w-16 m-auto relative z-[9] appearance-none cursor-pointer opacity-100 !px-4 py-0 h-full items-center justify-center text-center hover:opacity-80 ${open ? "fill-dark" : "fill-white"} md:hidden flex`}
               onClick={() => handleNavOpen()}>
               {!open && (
                 <svg
@@ -114,6 +115,9 @@ const Nav = (): ReactElement => {
                 </svg>
               )}
             </button>
+            <div className="md:flex md:flex-col hidden">
+              <NavLinks />
+            </div>
           </div>
         </div>
       </nav>

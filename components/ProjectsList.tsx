@@ -20,7 +20,7 @@ const ProjectsList = (): ReactElement => {
   }
 
   return (
-      <div className="min-h-full flex text-primary font-league-spartan w-full bg-dark">
+      <div id="projectList" className="min-h-full flex text-primary font-league-spartan w-full bg-dark">
         <div className="container mx-auto px-4 relative max-w-4xl">
           <div className="gap-4 flex-col">
               <motion.div 

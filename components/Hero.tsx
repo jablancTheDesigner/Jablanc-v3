@@ -21,7 +21,7 @@ const Hero = ({
   buttonText,
 }: JBHeroType): ReactElement => {
   return (
-    <div className="hero bg-dark h-full py-[var(--nav-height)] flex flex-col items-center justify-center">
+    <div id="hero" className="hero bg-dark h-full py-[var(--nav-height)] flex flex-col items-center justify-center">
       <div className="container mx-auto relative flex flex-col items-center justify-center px-4">
         <div className="relative flex max-w-md md:max-w-xl lg:max-w-3xl flex-col z-10 mx-auto md:w-full ">
             {/* Title Text */}
@@ -52,7 +52,7 @@ const Hero = ({
               whileInView={{ top: [-30, 10, 0], opacity: 1 }}
               transition={{ type: "spring", stiffness: 400, damping: 17, delay: 0.75 }}>
               <Link href="/projects">
-                <a className="app-button" data-testid="work-btn" title={buttonText}>
+                <a className="app-button border" data-testid="work-btn" title={buttonText}>
                   {buttonText}
                 </a>
               </Link>
@@ -60,8 +60,9 @@ const Hero = ({
         </div>
       </div>
       {/* Hero Bg */}
-      <div className="hero__background absolute left-0 top-0 leading-[0.7] text-center w-screen h-full overflow-hidden flex flex-col  break-all justify-center">
-      </div>{/* Hero Bg end */}
+      {/* <div className="hero__background absolute left-0 top-0 leading-[0.7] text-center w-screen h-full overflow-hidden flex flex-col  break-all justify-center">
+      </div> */}
+      {/* Hero Bg end */}
     </div>
   );
 };
