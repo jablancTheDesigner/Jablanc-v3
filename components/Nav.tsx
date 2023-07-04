@@ -53,14 +53,14 @@ const Nav = (): ReactElement => {
 
   return (
     <header>
-      <nav className="fixed w-full text-dark p-0 z-[999] p-8">
+      <nav className="absolute w-full text-dark z-[20] p-8">
         <div className="mx-auto relative flex w-full justify-between items-start">
           <Link href="/">
             <a className={`px-4 py-0 flex items-center justify-center w-[75px] fill-white left-0 top-0 h-[var(--nav-height)] ${open ? "fill-dark" : "fill-white"}`}>
               <Logo />
             </a>
           </Link>
-          <div className={`flex flex-col ml-auto z-[999] h-[var(--nav-height)] text-right pt-2`}>
+          <div className={`flex flex-col ml-auto z-[20] h-[var(--nav-height)] text-right pt-2`}>
             <button
               className={`w-16 m-auto relative z-[9] appearance-none cursor-pointer opacity-100 !px-4 py-0 h-full items-center justify-center text-center hover:opacity-80 ${open ? "fill-dark" : "fill-white"} md:hidden flex`}
               onClick={() => handleNavOpen()}>

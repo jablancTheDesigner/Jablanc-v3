@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ReactElement, useState } from "react";
+import { scrollToSection } from "../utilities/utilityFunctions";
 
 const NavLinks = () : ReactElement => {
     const [links, setLinks] = useState([
@@ -8,24 +9,17 @@ const NavLinks = () : ReactElement => {
         { url: "projectList", name: "Projects", active: true },
     ])
 
-    const scrollToLink = (link) => {
-        const scrollOffset = document.getElementById(`${link}`).offsetTop
-        window.scroll({
-            top: scrollOffset,
-            behavior: 'smooth'
-          });
-    }
     return (
         <ul className="flex flex-col gap-2">
             {links.map((link, index) => {
                 return (
                   <>
                     {link.active && (
-                      <p
+                      <button
                       className="text-base text-white font-semibold cursor-pointer opacity-50"
-                      onClick={() => scrollToLink(link.url)}>
+                      onClick={() => scrollToSection(link.url)}>
                       {link.name}
-                    </p>
+                    </button>
                     )}
                   </>
                 );

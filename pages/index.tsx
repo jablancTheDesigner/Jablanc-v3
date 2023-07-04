@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import Head from "next/head";
 import PageWrapper from "../components/PageWrapper";
 import ProjectsList from "../components/ProjectsList";
+import SelectedProject from "../components/SelectedProject";
 
 export default function Home() {
   const title: string = "Home";
@@ -25,6 +26,7 @@ export default function Home() {
           bgText={bgWords}
         />
         <ProjectsList />
+        <SelectedProject />
     </>
   );
 }

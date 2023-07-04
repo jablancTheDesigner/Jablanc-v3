@@ -37,13 +37,13 @@ export default function SingleProject() {
         console.log(data.project as JBProject)
       });
     }
-  },[])
+  },[selectedProject])
 
   return (
-    <div className="w-full bg-dark py-[var(--nav-height)] min-h-screen flex flex-col gap-8">
+    <div className="w-full bg-dark pb-[var(--nav-height)] pt-24 min-h-screen flex flex-col gap-8">
       <div className='container mx-auto flex max-w-5xl py-4 border-b-2 border-white'>
-        <Link href="/projects">
-          <a className='mr-auto font-bold text-white flex items-center gap-2 px-4'><AiOutlineArrowLeft /> All  projects</a>
+        <Link href="/">
+          <a className='mr-auto font-bold text-white flex items-center gap-2 px-4 mt-8'><AiOutlineArrowLeft /> Back Home</a>
         </Link>
       </div>
 
