@@ -4,6 +4,7 @@ import Head from "next/head";
 import PageWrapper from "../components/PageWrapper";
 import ProjectsList from "../components/ProjectsList";
 import SelectedProject from "../components/SelectedProject";
+import Contact from "../components/Contact";
 
 export default function Home() {
   const title: string = "Home";
@@ -27,6 +28,7 @@ export default function Home() {
         />
         <ProjectsList />
         <SelectedProject />
+        <Contact />
     </>
   );
 }
