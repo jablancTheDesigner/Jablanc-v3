@@ -41,7 +41,7 @@ const ProjectsList = (): ReactElement => {
               </motion.div>
 
               <AnimateSharedLayout>
-                <motion.div className="flex-1 min-h-screen pb-20">
+                <motion.div className="flex-1 pb-20">
                   <motion.div className="flex flex-col py-[var(--nav-height)] gap-10">
                     <Suspense fallback={null}>
                       <div className="flex flex-col gap-6">
