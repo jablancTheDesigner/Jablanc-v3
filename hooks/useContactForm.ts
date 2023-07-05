@@ -5,6 +5,7 @@ interface FormData {
     lname?: string;
     email?: string;
     phone?: string;
+    customer_name?: string;
 }
 
 const useContactForm = (initialState: FormData) => {

@@ -1,12 +1,14 @@
-import { ReactElement, useState } from "react";
+import { ReactElement, useRef, useState } from "react";
 import Input from "./Input";
 import useContactForm from "../hooks/useContactForm";
 import { useRouter } from "next/router";
+import emailjs from '@emailjs/browser';
 
 const Contact = (): ReactElement => {
     const {formData, handleFormData} = useContactForm({});
     const [submitClicked, setSubmitClicked] = useState(false)
-    const router = useRouter()
+    const router = useRouter();
+    const form = useRef();
 
     const encode = (data) => {
         return Object.keys(data)
@@ -16,41 +18,27 @@ const Contact = (): ReactElement => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const form = e.target
-        fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({ 
-                "form-name": form.getAttribute('name'), 
-                ...formData 
-            })
-          })
-            .then(() => {
+        emailjs.sendForm('service_mutwe9q', 'template_swh02mm', form.current, '1SbO05iXVOS244bYQ')
+            .then((result) => {
+                // show the user a success message
+                console.log(result)
                 router.push("/success")
-            })
-            .catch(error => alert(error));
+            }, (error) => {
+                // show the user an error
+                console.log("error")
+            });
     }
 
     return (
-        <div className="bg-black flex flex-grow h-screen py-[var(--nav-height)]">
+        <div id="contact" className="bg-black flex flex-grow h-screen py-[var(--nav-height)]">
             <div className="m-auto max-w-xl w-full px-4">
                 <h1 className="text-center text-5xl text-white font-bold mb-6">Contact Me</h1>
                 <form className="flex flex-col gap-4" 
+                    ref={form}
                     name="contactMe" 
-                    onSubmit={handleSubmit}
-                    method="post"
-                    action="/success/"
-                    data-netlify="true"
-                    data-netlify-honeypot="bot-field">
-                    <input type="hidden" name="form-name" value="contactMe" />
-                    <div className="flex gap-4 w-full">
-                        <div className="w-1/2">
-                            <Input label="First name" type="text" name="firstName" value={formData.fname} onChangeHandler={handleFormData} />
-                        </div>
-
-                        <div className="w-1/2">
-                            <Input label="First name" type="text" name="lastName" value={formData.fname} onChangeHandler={handleFormData} />
-                        </div>
+                    onSubmit={handleSubmit}>
+                    <div className="w-full">
+                        <Input label="Customer Name" type="text" name="customer_name" value={formData.customer_name} onChangeHandler={handleFormData} />
                     </div>
 
                     <div className="w-full">

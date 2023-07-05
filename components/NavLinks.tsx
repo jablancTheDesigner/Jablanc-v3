@@ -7,6 +7,7 @@ const NavLinks = () : ReactElement => {
     const [links, setLinks] = useState([
         { url: "top", name: "Home", active: true },
         { url: "projectList", name: "Projects", active: true },
+        { url: "contact", name: "Contact", active: true },
     ])
 
     return (
