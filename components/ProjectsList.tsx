@@ -17,6 +17,7 @@ const ProjectsList = (): ReactElement => {
 
   const handleUrl = (project: JBProject) => {
     if(!project.url){
+      setSelectedProject(project)
       return 
     }
     window.open(project.url, "_blank");
@@ -41,7 +42,7 @@ const ProjectsList = (): ReactElement => {
               </motion.div>
 
               <AnimateSharedLayout>
-                <motion.div className="flex-1 pb-20">
+                <motion.div className="flex-1 pb-20 px-8">
                   <motion.div className="flex flex-col py-[var(--nav-height)] gap-10">
                     <Suspense fallback={null}>
                       <div className="flex flex-col gap-6">
@@ -49,8 +50,7 @@ const ProjectsList = (): ReactElement => {
                           projects.map((project) => (
                             // <ProjectCard content={project} key={project.id} />
                             <>
-                              {project.url && (
-                                <motion.button 
+                              <motion.button 
                                   key={project.id} 
                                   transition={{ type: "spring", stiffness: 400, damping: 17 }}
                                   initial={{ scale: 0 }}
@@ -59,21 +59,7 @@ const ProjectsList = (): ReactElement => {
                                   onClick={() => handleUrl(project)}
                                   className={`text-left pb-4 border-b-2 md:text-6xl text-4xl text-white hover:line-through cursor-pointer`} >
                                     {project.title}
-                                </motion.button>
-                              )}
-                              {!project.url && (
-                                <motion.div 
-                                  key={project.id} 
-                                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                                  initial={{ scale: 0 }}
-                                  whileInView={{ scale: [0, 1], offset: 100 }}
-                                  exit={{ scale: [1, 0], offset: 100 }}
-                                  className={`text-left pb-4 border-b-2 md:text-6xl text-4xl text-white hover:line-through cursor-pointer`} >
-                                    <Link href={`/project/${project.slug}`}>
-                                      <a>{project.title}</a>
-                                    </Link>
-                                </motion.div>
-                              )}
+                              </motion.button>
                             </>
                           ))
                         )}
