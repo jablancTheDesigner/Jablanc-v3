@@ -5,6 +5,7 @@ interface InputData {
     value: string,
     type: string,
     placeholder?: string,
+    required?: boolean,
     onChangeHandler: (args: any) => void
 }
 
@@ -15,6 +16,7 @@ const Input = (inputData: InputData) => {
                 {inputData.label}
             </label>
             <input 
+                {...(inputData.required ? {required: inputData.required} : {})}
                 type={inputData.type} 
                 name={inputData.name} 
                 value={inputData.value} 

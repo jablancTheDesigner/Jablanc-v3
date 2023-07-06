@@ -38,15 +38,31 @@ const Contact = (): ReactElement => {
                     name="contactMe" 
                     onSubmit={handleSubmit}>
                     <div className="w-full">
-                        <Input label="Name" placeholder="Enter your Name" type="text" name="customer_name" value={formData.customer_name} onChangeHandler={handleFormData} />
+                        <Input label="Name" 
+                            placeholder="Enter your Name" 
+                            type="text" 
+                            name="customer_name" 
+                            required={true}
+                            value={formData.customer_name} onChangeHandler={handleFormData} />
                     </div>
 
                     <div className="w-full">
-                        <Input label="Phone #" placeholder="Enter your phone number" type="tel" name="phone" value={formData.fname} onChangeHandler={handleFormData} />
+                        <Input label="Phone #" 
+                            placeholder="Enter your phone number" 
+                            type="tel" 
+                            name="phone" 
+                            value={formData.fname} 
+                            onChangeHandler={handleFormData} />
                     </div>
 
                     <div className="w-full">
-                        <Input label="Email" type="email" placeholder="Enter email" name="email" value={formData.fname} onChangeHandler={handleFormData} />
+                        <Input label="Email" 
+                            type="email" 
+                            placeholder="Enter email" 
+                            name="email" 
+                            value={formData.fname} 
+                            required={true} 
+                            onChangeHandler={handleFormData} />
                     </div>
                     <button 
                         type="submit"
