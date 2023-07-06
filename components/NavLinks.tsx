@@ -11,7 +11,7 @@ const NavLinks = () : ReactElement => {
     ])
 
     return (
-        <ul className="flex flex-col gap-2">
+        <ul className="flex flex-col gap-2 items-end">
             {links.map((link, index) => {
                 return (
                   <>

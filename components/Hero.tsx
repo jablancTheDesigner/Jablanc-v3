@@ -53,7 +53,7 @@ const Hero = ({
                 data-testid="sub-heading">
                 {subTitle}
               </h2>
-              <motion.div className="text-3xl relative mt-8 md:mb-0 mb-8 justify-center text-white grid grid-cols-4 md:flex flex-wrap items-center gap-4 md:gap-8 md:max-w-full mx-auto">
+              <motion.div className="text-3xl relative mt-8 md:mb-0 mb-8 justify-center text-primary grid grid-cols-4 md:flex flex-wrap items-center gap-4 md:gap-8 md:max-w-full mx-auto">
                 {icons.map((icon, idx) => {
                   return (
                     renderIcon(icon, idx)

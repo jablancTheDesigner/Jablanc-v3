@@ -7,7 +7,7 @@ const links = [
   { url: "#top", name: "Home", active: true },
   { url: "#projectList", name: "Projects", active: true },
   { url: "/blog", name: "Blog", active: false },
-  { url: "/contact", name: "Contact", active: false },
+  { url: "#contact", name: "Contact", active: true },
 ];
 
 const Logo = (): ReactElement => {

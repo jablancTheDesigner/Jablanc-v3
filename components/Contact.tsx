@@ -50,7 +50,7 @@ const Contact = (): ReactElement => {
                     </div>
                     <button 
                         type="submit"
-                        className="app-button mt-6">
+                        className="app-button mt-6 !bg-primary">
                         Submit
                     </button>
                 </form>
