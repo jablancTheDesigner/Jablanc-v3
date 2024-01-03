@@ -1,5 +1,4 @@
 import { ReactElement } from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { JBHeroType } from "../src/dataTypes";
 import {

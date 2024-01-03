@@ -12,7 +12,7 @@ interface InputData {
 const Input = (inputData: InputData) => {
     return (
         <>
-            <label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-white mb-2">
+            <label htmlFor="first-name" className="block text-xl font-semibold leading-6 text-primary mb-1">
                 {inputData.label}
             </label>
             <input 
@@ -22,7 +22,8 @@ const Input = (inputData: InputData) => {
                 value={inputData.value} 
                 onChange={inputData.onChangeHandler} 
                 placeholder={inputData.placeholder ?? ""}
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                className="block w-full rounded-md border-0 px-0 py-2 text-white shadow-sm ring-0 placeholder:text-gray-400 focus:ring-transparent sm:text-sm sm:leading-6 bg-transparent outline-none" />
+                <div className="block w-full h-1 bg-primary mb-4"></div>
         </>
     )
 }
