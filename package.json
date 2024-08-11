@@ -26,8 +26,6 @@
     "react-icons": "^4.4.0",
     "react-masonry-layout": "0.4.0",
     "react-masonry-list": "^1.0.6",
-    "typed": "^4.1.2",
-    "typed.js": "^2.0.12",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
