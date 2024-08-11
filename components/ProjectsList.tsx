@@ -1,19 +1,24 @@
-import { ReactElement, Suspense } from "react";
+/* eslint-disable @next/next/no-img-element */
+import { ReactElement, Suspense, useEffect, useState } from "react";
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
-import { JBProject } from "../src/dataTypes";
+import { JBProject, JBProjectType } from "../src/dataTypes";
 import { usePortfolioContext } from "../context/PortfolioContext";
-import ProjectCard from "./ProjectCard";
-import Link from "next/link";
-import {BsGithub} from "react-icons/bs";
-import SelectedProject from "./SelectedProject";
+import dynamic from 'next/dynamic';
+import AnimatedComponent from "./Animated/AnimatedComponent";
+import AnimatedHeader from "./Animated/AnimatedHeader";
+
+const Masonry = dynamic(() => import('react-masonry-list'), {
+  ssr: false,
+});
 
 const ProjectsList = (): ReactElement => {
   const { 
     projects, 
+    setProjects,
     selectedProject,
     setSelectedProject, 
   } = usePortfolioContext();
-  const pageTite = "Some Things I’ve Built";
+  const pageTite = "Client Work & Projects";
 
   const handleUrl = (project: JBProject) => {
     if(!project.url){
@@ -23,51 +28,65 @@ const ProjectsList = (): ReactElement => {
     window.open(project.url, "_blank");
   }
 
+  const [filteredProjects, setFilteredProjects] = useState<JBProject[]>(projects)
+  const [category, setCategory] = useState<JBProjectType | "All">("All")
+
+  const filterProjectsByCategory = (category: JBProjectType) => {
+    const renderedProjects = projects.filter(project => project.type == category)
+    setFilteredProjects(renderedProjects)
+    setCategory(category);
+  }
+
+  const getAllProjects = () => {
+    setFilteredProjects(projects)
+    setCategory("All");
+  }
+
   return (
       <div id="projectList" className="min-h-full flex text-primary font-league-spartan w-full bg-dark">
         <div className="container mx-auto px-4 relative max-w-4xl">
-          <div className="gap-4 flex-col">
-              <motion.div 
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: [0, 1], offset: 100 }}
-                  className="w-full flex">
-                <div className="md:top-[calc(var(--nav-height)+2rem)] flex flex-col py-8 h-auto max-w-lg mx-auto">
+          <div className="gap-4 flex-col mb-8">
+            <AnimatedComponent>
+              <div className="md:top-[calc(var(--nav-height)+2rem)] flex flex-col py-8 h-auto max-w-lg mx-auto">
                   <div className="md:mb-auto text-6xl md:ml-0 pt-[var(--nav-height)] lg:text-left text-center max-w-xl mx-auto">
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl mt-auto font-semibold tracking-tight text-white drop-shadow-2xl drop uppercase text-center">
-                      {pageTite}
-                    </h1>
+                    <AnimatedHeader title={pageTite}></AnimatedHeader>
                   </div>
                 </div>
-              </motion.div>
+            </AnimatedComponent>
 
-              <AnimateSharedLayout>
-                <motion.div className="flex-1 pb-20 px-8">
-                  <motion.div className="flex flex-col py-[var(--nav-height)] gap-10">
-                    <Suspense fallback={null}>
-                      <div className="flex flex-col gap-6">
-                        {projects && projects.length > 0 && (
-                          projects.map((project) => (
-                            // <ProjectCard content={project} key={project.id} />
-                            <>
-                              <motion.button 
-                                  key={project.id} 
-                                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                                  initial={{ scale: 0 }}
-                                  whileInView={{ scale: [0, 1], offset: 100 }}
-                                  exit={{ scale: [1, 0], offset: 100 }}
-                                  onClick={() => handleUrl(project)}
-                                  className={`text-left pb-4 border-b-2 md:text-6xl text-4xl text-primary hover:line-through cursor-pointer`} >
-                                    {project.title}
-                              </motion.button>
-                            </>
-                          ))
-                        )}
-                      </div>
-                    </Suspense>
-                  </motion.div>
-                </motion.div>
-              </AnimateSharedLayout>
+            {/* <AnimatedComponent>
+              <div className="flex gap-4 full justify-center mb-8 text-lg w-full">
+                  <button 
+                      className={`${category == 'All' ?  'opacity-100' : 'opacity-50'}`} 
+                      onClick={getAllProjects}>All</button>
+                  <button 
+                    className={`${category == 'development' ?  'opacity-100' : 'opacity-50'}`} 
+                    onClick={() => filterProjectsByCategory('development')}>Web</button>
+                  <button 
+                    className={`${category == 'branding' ?  'opacity-100' : 'opacity-50'}`} 
+                    onClick={() => filterProjectsByCategory('branding')}>Design</button>
+                </div>
+            </AnimatedComponent> */}
+
+            <Masonry
+              gap={15}
+              colCount={2}
+              minWidth={100}
+              items={filteredProjects.map((item) => (
+                <div key={item.id}>
+                  <motion.button 
+                      key={item.id} 
+                      transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: [0, 1], offset: 100 }}
+                      exit={{ scale: [1, 0], offset: 100 }}
+                      onClick={() => handleUrl(item)}
+                      className={`text-left p-4 border-2 border-primary md:text-4xl text-3xl text-primary hover:line-through cursor-pointer break-all`} >
+                        {item.title}
+                  </motion.button>
+                </div>
+              ))}
+            ></Masonry>
           </div>
         </div>
       </div>

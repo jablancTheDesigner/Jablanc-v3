@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import ProjectsList from "../components/ProjectsList";
 import { usePortfolioContext } from "../context/PortfolioContext";
 import { getProjects } from "../src/projectsService";
+import MasonryLayout from "react-masonry-layout";
 
 export default function Projects() {
   const pageTite = "Projects";

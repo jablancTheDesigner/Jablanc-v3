@@ -17,12 +17,15 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
+    "@mtsmfm/react-masonry": "^0.1.1",
     "framer-motion": "^7.6.1",
     "gsap": "^3.11.1",
     "next": "12.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
+    "react-masonry-layout": "0.4.0",
+    "react-masonry-list": "^1.0.6",
     "typed": "^4.1.2",
     "typed.js": "^2.0.12",
     "uuid": "^9.0.0"

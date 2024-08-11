@@ -3,6 +3,7 @@ import Input from "./Input";
 import useContactForm from "../hooks/useContactForm";
 import { useRouter } from "next/router";
 import emailjs from '@emailjs/browser';
+import AnimatedHeader from "./Animated/AnimatedHeader";
 
 const Contact = (): ReactElement => {
     const {formData, handleFormData} = useContactForm({});
@@ -32,7 +33,7 @@ const Contact = (): ReactElement => {
     return (
         <div id="contact" className="bg-darker flex flex-grow h-screen py-[var(--nav-height)]">
             <div className="m-auto max-w-xl w-full px-8">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl mt-auto font-semibold tracking-tight text-white drop-shadow-md uppercase text-center mb-6">Contact Me</h1>
+                <AnimatedHeader title={"Contact Me"}></AnimatedHeader>
                 <form className="flex flex-col gap-4" 
                     ref={form}
                     name="contactMe" 

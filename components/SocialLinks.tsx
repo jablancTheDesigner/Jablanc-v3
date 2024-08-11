@@ -1,6 +1,7 @@
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { AiTwotoneMail } from "react-icons/ai";
 import Link from "next/link";
+import { TiLocationOutline } from "react-icons/ti";
 
 const links = [
   { icon: <FaLinkedinIn />, address: "https://www.linkedin.com/in/jahmal-blanchard-bb988433/" },
@@ -10,15 +11,15 @@ const links = [
 
 function SocialLinks() {
   return (
-    <div className="h-16 flex justify-end fixed bottom-0 right-0 text-lg text-primary md:w-auto w-full z-[3]">
-      <ul className="list-none border-r border-t border-dark mt-auto flex w-full justify-evenly bg-dark">
+    <div className="flex justify-end text-lg text-primary md:w-auto w-full items-end my-8">
+      <ul className="list-none flex flex-col w-full justify-evenly">
         {links.map((link, i) => {
           return (
             <li
               key={i}
-              className="p-0 list-none text-2xl w-auto flex items-center">
+              className="p-0 list-none text-2xl flex items-end">
               <Link href={link.address}>
-                <a className="app-button text-lg" target="_blank">{link.icon}</a>
+                <a className="px-8 pt-8 text-xl" target="_blank">{link.icon}</a>
               </Link>
             </li>
           );

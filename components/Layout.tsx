@@ -3,14 +3,14 @@ import Nav from "./Nav";
 import SocialLinks from "./SocialLinks";
 import PortfolioContextProvider, { usePortfolioContext } from "../context/PortfolioContext";
 import CurrentLocation from "./CurrentLocation";
+import Footer from "./Footer";
 
 const Layout = ({ children }): ReactElement => {
   return (
     <PortfolioContextProvider>
         <Nav />
         {children}
-        <SocialLinks />
-        <CurrentLocation />
+        <Footer />
     </PortfolioContextProvider>
   );
 };

@@ -29,7 +29,7 @@ export const Projects: JBProject[] = [
   },
   {
     id: "2",
-    title: "Task Manager",
+    title: "goals-tasks-todos.netlify.app",
     slug: generateSlug("Task Manager"),
     codeLink: "https://github.com/jablancTheDesigner/goals-task-todos",
     logo: null,
@@ -53,7 +53,7 @@ export const Projects: JBProject[] = [
   },
   {
     id: "3",
-    title: 'E-Commerce App',
+    title: 'puffessional.netlify.app',
     slug: generateSlug("E-Commerce App"),
     codeLink: "https://github.com/jablancTheDesigner/puffessional",
     logo: null,
