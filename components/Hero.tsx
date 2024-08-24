@@ -15,6 +15,9 @@ import {
 } from 'react-icons/si';
 import { scrollToSection } from "../utilities/utilityFunctions";
 import AnimatedComponent from "./Animated/AnimatedComponent";
+import SocialLinks from "./SocialLinks";
+import Footer from "./Footer";
+import Nav from "./Nav";
 
 
 
@@ -36,32 +39,42 @@ const Hero = ({
 
   const renderIcon = (Icon , index) => {
     return (
-      <p className="mx-auto" key={index}><Icon /></p>
+      <p key={index} className="text-primary opacity-30"><Icon /></p>
     )
   }
   return (
     
-<div id="hero" className="hero bg-dark h-full py-[var(--nav-height)] flex flex-col items-center justify-center">
-      <div className="container mx-auto relative flex flex-col items-center justify-center px-4">
-        <div className="relative flex max-w-md md:max-w-xl lg:max-w-3xl flex-col z-10 mx-auto md:w-full ">
+<div id="hero" className="hero h-full flex flex-col items-center justify-center">
+      <Nav /> 
+      <div className="container m-auto relative flex flex-col items-center justify-center px-4">
+        <div className="relative flex max-w-xs md:max-w-md lg:max-w-xl flex-col z-10 md:w-full ">
             {/* Title Text */}
             <AnimatedComponent>
-              <div className="text-white z-2 relative py-4 md:py-8 font-league-spartan text-center px-4">
-                <h4 className="block text-xl md:text-3xl lg:text-4xl mb-4 text-white" data-testid="heading">
-                  {title}
-                </h4>
-                <h2
-                  className="text-5xl md:text-5xl lg:text-6xl tracking-tight font-bold leading-[0.85] uppercase"
-                  data-testid="sub-heading">
-                  {subTitle}
-                </h2>
-                <motion.div className="text-3xl relative mt-8 md:mb-0 mb-8 justify-center text-primary grid grid-cols-4 md:flex flex-wrap items-center gap-4 md:gap-8 md:max-w-full mx-auto">
-                  {icons.map((icon, idx) => {
-                    return (
-                      renderIcon(icon, idx)
-                    )
-                  })}
-                </motion.div>
+              <div className="flex items-center gap-8 justify-center">
+                <SocialLinks />
+                <div className="text-white z-2 relative font-league-spartan text-left flex flex-col gap-4">
+                  <h4 
+                    className="block text-xl md:text-3xl lg:text-4xl text-white" 
+                    data-testid="heading">
+                    {title},
+                  </h4>
+                  <h2
+                    className="text-5xl tracking-tight font-bold leading-[0.85] uppercase"
+                    data-testid="sub-heading">
+                    {subTitle}.
+                  </h2>
+                  <h4 className="block text-4xl text-white" data-testid="heading">
+                    I like to build things for the web.
+                  </h4>
+                  <motion.div 
+                    className="text-3xl relative justify-start text-primary flex-wrap items-start gap-4 md:gap-8 md:max-w-full hidden md:flex">
+                    {icons.map((icon, idx) => {
+                      return (
+                        renderIcon(icon, idx)
+                      )
+                    })}
+                  </motion.div>
+                </div>
               </div>
             </AnimatedComponent>
              {/* Title Text end */}
@@ -69,6 +82,7 @@ const Hero = ({
             {/* Hero Button */}
         </div>
       </div>
+      {/* <Footer /> */}
     </div>
   );
 };

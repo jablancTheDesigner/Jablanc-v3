@@ -8,9 +8,7 @@ import Footer from "./Footer";
 const Layout = ({ children }): ReactElement => {
   return (
     <PortfolioContextProvider>
-        <Nav />
         {children}
-        <Footer />
     </PortfolioContextProvider>
   );
 };

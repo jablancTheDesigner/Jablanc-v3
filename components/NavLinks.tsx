@@ -17,8 +17,8 @@ const NavLinks = () : ReactElement => {
                   <>
                     {link.active && (
                       <button
-                      className="text-base text-white font-semibold cursor-pointer opacity-50"
-                      onClick={() => scrollToSection(link.url)}>
+                        className="text-base text-white font-semibold cursor-pointer opacity-50"
+                        onClick={() => scrollToSection(link.url)}>
                       {link.name}
                     </button>
                     )}

@@ -2,6 +2,8 @@ import { useState, ReactElement } from "react";
 import Link from "next/link";
 import { usePortfolioContext } from "../context/PortfolioContext";
 import NavLinks from "./NavLinks";
+import AnimatedComponent from "./Animated/AnimatedComponent";
+import { motion } from "framer-motion";
 
 const links = [
   { url: "#top", name: "Home", active: true },
@@ -33,36 +35,38 @@ const Logo = (): ReactElement => {
 
 const Nav = (): ReactElement => {
   const [open, setOpen] = useState(false);
+  const [close, setClose] = useState(false);
   const linkClasses = "app-button app-button--primary md:text-5xl lg:text-6xl text-4xl !text-dark !font-bold";
   const { setSelectedProject, openProject, setOpenProject, navIsOpen, setNavIsOpen } = usePortfolioContext();
 
   const handleNavLink = () => {
     setOpen(false);
+    setClose(true)
     if(openProject){
       setSelectedProject(null);
       setOpenProject(false);
       setNavIsOpen(false)
     }
-  
   }
 
   const handleNavOpen = () => {
     setOpen(!open)
+    setClose(!!open)
     setNavIsOpen(!navIsOpen)
   }
 
   return (
-    <header>
-      <nav className="absolute w-full text-dark z-[20] p-8">
-        <div className="mx-auto relative flex w-full justify-between items-start">
+    <header className="w-full z-[20] p-8 absolute top-0">
+      <nav className="mx-auto relative flex w-full justify-between items-center z-30">
           <Link href="/">
-            <a className={`px-4 py-0 flex items-center justify-center w-[75px] fill-white left-0 top-0 h-[var(--nav-height)] ${open ? "fill-dark" : "fill-white"}`}>
+            <a 
+              className={`px-4 py-0 flex items-center justify-center w-[75px] fill-primary ${open ? "!fill-white" : "fill-primary"}`}>
               <Logo />
             </a>
           </Link>
-          <div className={`flex flex-col ml-auto z-[20] h-[var(--nav-height)] text-right pt-2`}>
+          <div className={`flex flex-col ml-auto z-[20] text-right`}>
             <button
-              className={`w-16 m-auto relative z-[9] appearance-none cursor-pointer opacity-100 !px-4 py-0 h-full items-center justify-center text-center hover:opacity-80 ${open ? "fill-dark" : "fill-white"} md:hidden flex`}
+              className={`w-16 m-auto relative z-[9] appearance-none cursor-pointer opacity-100 !px-4 py-0 h-full items-center justify-center text-center hover:opacity-80 ${open ? "fill-dark" : "fill-primary"} md:hidden flex`}
               onClick={() => handleNavOpen()}>
               {!open && (
                 <svg
@@ -119,33 +123,34 @@ const Nav = (): ReactElement => {
               <NavLinks />
             </div>
           </div>
-        </div>
       </nav>
 
-      <div
-        className={`fixed right-0 top-0 transition-all ease-in-out ${
-          open ? "opacity-100 z-[998]" : "opacity-0 -z-[1]"
-        }`}>
-        <div className="w-screen h-screen p-4 flex flex-col fixed top-0 left-0 pt-[var(--nav-height)] justify-center text-center bg-primary">
-          <div className="-mt-[var(--nav-height)] flex flex-col max-w-2xl mx-auto">
-            {links.map((link, index) => {
-              return (
-                <>
-                  {link.active && (
-                    <Link href={link.url} key={index}>
-                      <a
-                        className={`${linkClasses} hover:!text-white`}
-                        onClick={() => handleNavLink()}>
-                        {link.name}
-                      </a>
-                    </Link>
-                  )}
-                </>
-              );
-            })}
-          </div>
-        </div>
-      </div>
+      <motion.div 
+            transition={{ type: "spring", stiffness: 700, damping: 5 }}
+            initial={{ scale: 0 }}
+            whileInView={{ scale: open ? [0, 1] : close ? [1,0] : [0,0]}}
+            className="w-full flex fixed top-0 left-0">
+            <div className="w-screen h-screen p-4 flex flex-col pt-[var(--nav-height)] justify-center text-center bg-primary">
+              <div className="-mt-[var(--nav-height)] flex flex-col max-w-2xl mx-auto">
+                {links.map((link, index) => {
+                  return (
+                    <>
+                      {link.active && (
+                        <Link href={link.url} key={index}>
+                          <a
+                            className={`${linkClasses} hover:!text-white`}
+                            onClick={() => handleNavLink()}>
+                            {link.name}
+                          </a>
+                        </Link>
+                      )}
+                    </>
+                  );
+                })}
+              </div>
+            </div>
+        </motion.div>
+
     </header>
   );
 };
