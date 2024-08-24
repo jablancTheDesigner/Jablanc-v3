@@ -5,7 +5,7 @@ import {generateSlug} from '../utilities/utilityFunctions'
 export const Projects: JBProject[] = [
   {
     id: "1",
-    title: "Slide Out Navigation",
+    title: "Pure HTML/SCSS/JS slide navigation",
     slug: generateSlug("Slide Out Navigation"),
     codeLink: "https://github.com/jablancTheDesigner/minimalist-nav",
     logo: null,
@@ -29,7 +29,7 @@ export const Projects: JBProject[] = [
   },
   {
     id: "2",
-    title: "goals-tasks-todos.netlify.app",
+    title: "ReactJS ToDo App",
     slug: generateSlug("Task Manager"),
     codeLink: "https://github.com/jablancTheDesigner/goals-task-todos",
     logo: null,
@@ -53,7 +53,7 @@ export const Projects: JBProject[] = [
   },
   {
     id: "3",
-    title: 'puffessional.netlify.app',
+    title: 'E-Commerce website made with ReactJS and Fake Store API',
     slug: generateSlug("E-Commerce App"),
     codeLink: "https://github.com/jablancTheDesigner/puffessional",
     logo: null,
@@ -77,7 +77,7 @@ export const Projects: JBProject[] = [
   },
   {
     id: "4",
-    title: "JV Snapshot",
+    title: "Client: JV Snapshot - Logo Design",
     slug: generateSlug("JV Snapshot"),
     client: "Jay",
     codeLink: null,
@@ -102,7 +102,7 @@ export const Projects: JBProject[] = [
   },
   {
     id: "5",
-    title: "Kloud 9 Kicks",
+    title: "Client: Kloud 9 Kicks - Logo Design",
     slug: generateSlug("Kloud 9 Kicks"),
     client: "Gabe B.",
     codeLink: null,

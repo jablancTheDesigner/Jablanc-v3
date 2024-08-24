@@ -48,7 +48,7 @@ const ProjectsList = (): ReactElement => {
           <div className="gap-4 flex-col mb-8">
             <AnimatedComponent>
               <div className="md:top-[calc(var(--nav-height)+2rem)] flex flex-col py-8 h-auto max-w-lg mx-auto">
-                  <div className="md:mb-auto text-6xl md:ml-0 pt-[var(--nav-height)] lg:text-left text-center max-w-xl mx-auto">
+                  <div className="md:mb-auto text-6xl md:ml-0 lg:text-left text-center max-w-xl mx-auto">
                     <AnimatedHeader title={pageTite}></AnimatedHeader>
                   </div>
                 </div>
@@ -70,10 +70,10 @@ const ProjectsList = (): ReactElement => {
 
             <Masonry
               gap={15}
-              colCount={2}
+              colCount={1}
               minWidth={100}
               items={filteredProjects.map((item) => (
-                <div key={item.id}>
+                <div key={item.id} className="flex">
                   <motion.button 
                       key={item.id} 
                       transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -81,8 +81,10 @@ const ProjectsList = (): ReactElement => {
                       whileInView={{ scale: [0, 1], offset: 100 }}
                       exit={{ scale: [1, 0], offset: 100 }}
                       onClick={() => handleUrl(item)}
-                      className={`text-left p-4 border-2 border-primary md:text-4xl text-3xl text-primary hover:line-through cursor-pointer break-all`} >
-                        {item.title}
+                      className={`p-4 text-3xl leading-[0.85] font-bold uppercase text-primary hover:line-through cursor-pointer text-center mx-auto `} >
+                        <p className="text-3xl leading-[0.85]">
+                          {item.title}
+                        </p>
                   </motion.button>
                 </div>
               ))}
