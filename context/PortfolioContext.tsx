@@ -1,11 +1,11 @@
 import { FC, ReactNode } from 'react';
 import { createContext, useContext, useState } from 'react';
-import { JBProject } from '../src/dataTypes';
+import { JBProject, Project } from '../src/dataTypes';
 import { Projects } from '../src/project-data';
 
 interface PortfolioContext {
-    projects: JBProject[];
-    setProjects: (data: JBProject[]) => void;
+    projects: Project[];
+    setProjects: (data: Project[]) => void;
     layoutStyle: string;
     setLayoutStyle: (layout: string) => void;
     layoutControls: boolean;
@@ -14,8 +14,8 @@ interface PortfolioContext {
     setLoading: (isLoading: boolean) => void;
     openProject: boolean;
     setOpenProject: (isOpen: boolean) => void;
-    selectedProject: JBProject | undefined;
-    setSelectedProject: (project: JBProject | undefined) => void;
+    selectedProject: Project | undefined;
+    setSelectedProject: (project: Project | undefined) => void;
     navIsOpen: boolean;
     setNavIsOpen: (isOpen: boolean) => void;
     activateBg: boolean;
@@ -31,12 +31,12 @@ type Props = {
 }
 
 const PortfolioContextProvider : FC<Props> = ({ children }) => {
-    const [projects, setProjects] = useState<JBProject[]>(Projects);
+    const [projects, setProjects] = useState<Project[]>(Projects);
     const [layoutStyle, setLayoutStyle] = useState<string>("row");
     const [layoutControls, setLayoutControls] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(false); 
     const [openProject, setOpenProject] = useState<boolean>(false);
-    const [selectedProject, setSelectedProject] = useState<JBProject>(null);
+    const [selectedProject, setSelectedProject] = useState<Project>(null);
     const [navIsOpen, setNavIsOpen] = useState<boolean>(false);
     const [activateBg, setActivateBg] = useState<boolean>(false);
     const [isLoaded, setIsLoaded] = useState<boolean>(false);

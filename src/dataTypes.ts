@@ -66,3 +66,16 @@ export interface JBProject {
   color?: string;
   type?: JBProjectType;
 }
+
+export type ProjectList = JBProject[];
+
+export type Project = {
+  id?: string;
+  title?: string;
+  client?: string;
+  description?: string;
+  imageUrl?: string;
+  repoLink?: string;
+  url?: string;
+  gallery?: string[];
+}
