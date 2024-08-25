@@ -78,4 +78,5 @@ export type Project = {
   repoLink?: string;
   url?: string;
   gallery?: string[];
+  slug?: string;
 }
