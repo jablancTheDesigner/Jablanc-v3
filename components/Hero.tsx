@@ -44,7 +44,7 @@ const Hero = ({
   }
   return (
     
-<div id="hero" className="hero h-full flex flex-col items-center justify-center">
+<div id="hero" className="hero h-full min-h-[695px] flex flex-col items-center justify-center">
       <Nav /> 
       <div className="container m-auto relative flex flex-col items-center justify-center px-4">
         <div className="relative flex max-w-xs md:max-w-md lg:max-w-xl flex-col z-10 md:w-full ">

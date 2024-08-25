@@ -38,7 +38,7 @@ const ProjectsList = (): ReactElement => {
                 </div>
             </AnimatedComponent>
 
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col divide-y-2 divide-darker justify-center">
               {projects.map((item) => (
                   <motion.button 
                       key={item.id} 
@@ -47,10 +47,8 @@ const ProjectsList = (): ReactElement => {
                       whileInView={{ scale: [0, 1], offset: 100 }}
                       exit={{ scale: [1, 0], offset: 100 }}
                       onClick={() => handleUrl(item)}
-                      className={`flex px-4 text-3xl font-bold uppercase text-primary hover:line-through cursor-pointer text-center mx-auto`} >
-                        <p className="text-3xl leading-snug">
+                      className={`py-8 text-3xl font-semibold text-primary hover:text-white cursor-pointer text-center w-full leading-snug max-w-xl mx-auto`} >
                           {item.title}
-                        </p>
                   </motion.button>
                 ))}
             </div>

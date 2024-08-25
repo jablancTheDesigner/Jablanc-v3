@@ -56,7 +56,7 @@ const Nav = (): ReactElement => {
   }
 
   return (
-    <header className="w-full z-[20] p-8 absolute top-0">
+    <header className="w-full z-[20] p-8 fixed top-0">
       <nav className="mx-auto relative flex w-full justify-between items-center z-30">
           <Link href="/">
             <a 
