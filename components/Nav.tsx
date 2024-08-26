@@ -1,4 +1,4 @@
-import { useState, ReactElement } from "react";
+import { useState, ReactElement, useEffect } from "react";
 import Link from "next/link";
 import { usePortfolioContext } from "../context/PortfolioContext";
 import NavLinks from "./NavLinks";
@@ -36,7 +36,7 @@ const Logo = (): ReactElement => {
 const Nav = (): ReactElement => {
   const [open, setOpen] = useState(false);
   const [close, setClose] = useState(false);
-  const linkClasses = "app-button app-button--primary md:text-5xl lg:text-6xl text-4xl !text-dark !font-bold";
+  const linkClasses = "app-button app-button--primary md:text-5xl lg:text-6xl text-4xl text-dark !font-bold";
   const { setSelectedProject, openProject, setOpenProject, navIsOpen, setNavIsOpen } = usePortfolioContext();
 
   const handleNavLink = () => {
@@ -55,12 +55,20 @@ const Nav = (): ReactElement => {
     setNavIsOpen(!navIsOpen)
   }
 
+  useEffect(() => {
+    if(open){
+      document.body.classList.add("overflow-hidden")
+    }else{
+      document.body.classList.remove("overflow-hidden")
+    }
+  }, [open])
+
   return (
-    <header className="w-full z-[20] p-8 fixed top-0">
+    <header className="w-full z-[20] p-8 fixed top-0  backdrop-blur-sm bg-gradient-to-b from-dark from-10% to-dark/0 to-50%">
       <nav className="mx-auto relative flex w-full justify-between items-center z-30">
           <Link href="/">
             <a 
-              className={`px-4 py-0 flex items-center justify-center w-[75px] fill-primary ${open ? "!fill-white" : "fill-primary"}`}>
+              className={`px-4 py-0 flex items-center justify-center w-[75px] ${open ? "!fill-dark" : "fill-white"}`}>
               <Logo />
             </a>
           </Link>

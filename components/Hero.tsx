@@ -44,7 +44,7 @@ const Hero = ({
   }
   return (
     
-<div id="hero" className="hero h-full min-h-[695px] flex flex-col items-center justify-center">
+<div id="hero" className="hero h-[95%] min-h-[600px] flex flex-col items-center justify-center">
       <Nav /> 
       <div className="container m-auto relative flex flex-col items-center justify-center px-4">
         <div className="relative flex max-w-xs md:max-w-md lg:max-w-xl flex-col z-10 md:w-full ">
@@ -66,14 +66,14 @@ const Hero = ({
                   <h4 className="block text-4xl text-white" data-testid="heading">
                     I like to build things for the web.
                   </h4>
-                  <motion.div 
+                  {/* <motion.div 
                     className="text-3xl relative justify-start text-primary flex-wrap items-start gap-4 md:gap-8 md:max-w-full hidden md:flex">
                     {icons.map((icon, idx) => {
                       return (
                         renderIcon(icon, idx)
                       )
                     })}
-                  </motion.div>
+                  </motion.div> */}
                 </div>
               </div>
             </AnimatedComponent>

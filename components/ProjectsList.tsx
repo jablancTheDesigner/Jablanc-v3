@@ -27,7 +27,7 @@ const ProjectsList = (): ReactElement => {
   }
 
   return (
-      <div id="projectList" className="min-h-full flex text-primary font-league-spartan w-full">
+      <div id="projectList" className="min-h-full flex text-primary font-league-spartan w-full bg-primary py-28">
         <div className="container mx-auto px-4 relative max-w-3xl">
           <div className="gap-4 flex-col mb-8">
             <AnimatedComponent>
@@ -47,7 +47,7 @@ const ProjectsList = (): ReactElement => {
                       whileInView={{ scale: [0, 1], offset: 100 }}
                       exit={{ scale: [1, 0], offset: 100 }}
                       onClick={() => handleUrl(item)}
-                      className={`py-8 text-3xl font-semibold text-primary hover:text-white cursor-pointer text-center w-full leading-snug max-w-xl mx-auto`} >
+                      className={`py-8 text-3xl font-semibold text-darker hover:text-white cursor-pointer text-center w-full leading-snug max-w-xl mx-auto`} >
                           {item.title}
                   </motion.button>
                 ))}

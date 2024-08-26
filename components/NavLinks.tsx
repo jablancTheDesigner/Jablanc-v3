@@ -5,9 +5,9 @@ import { scrollToSection } from "../utilities/utilityFunctions";
 
 const NavLinks = () : ReactElement => {
     const [links, setLinks] = useState([
-        { url: "top", name: "Home", active: true },
-        { url: "projectList", name: "Projects", active: true },
-        { url: "contact", name: "Contact", active: true },
+        { url: "top", name: "Home" },
+        { url: "projectList", name: "Projects" },
+        { url: "contact", name: "Contact" },
     ])
 
     return (
@@ -15,13 +15,11 @@ const NavLinks = () : ReactElement => {
             {links.map((link, index) => {
                 return (
                   <>
-                    {link.active && (
                       <button
-                        className="text-base text-white font-semibold cursor-pointer opacity-50"
+                        className="text-base text-white font-semibold cursor-pointer hover:text-primary uppercase"
                         onClick={() => scrollToSection(link.url)}>
                       {link.name}
                     </button>
-                    )}
                   </>
                 );
               })}
