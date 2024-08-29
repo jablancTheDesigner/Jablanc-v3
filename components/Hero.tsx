@@ -20,7 +20,6 @@ import Footer from "./Footer";
 import Nav from "./Nav";
 
 
-
 const Hero = ({
   title,
   subTitle,

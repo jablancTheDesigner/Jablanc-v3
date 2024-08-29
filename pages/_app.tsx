@@ -1,20 +1,11 @@
 import { useState, useEffect, lazy } from "react";
 import "../styles/main.scss";
 import Layout from "../components/Layout";
-import Loader from "../components/Loader";
 
 function MyApp({ Component, pageProps }) {
-  const [loaded, setLoaded] = useState(true);
+  const [loaded, setLoaded] = useState(false);
 
-  useEffect( () => {
-    setTimeout( () => {
-      setLoaded(false);
-    }, 2000)
-  }, [])
-
-  return loaded ? (
-      <Loader />
-  ) : (
+  return (
     <Layout>
       <Component {...pageProps} />
     </Layout>

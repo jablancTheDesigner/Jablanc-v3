@@ -31,6 +31,7 @@ import {
   Typography,
   Card
 } from "@material-tailwind/react";
+import Loader from "./Loader";
 
 
 interface StatsCardPropsType {
@@ -92,6 +93,7 @@ const SelectedProject = (): ReactElement => {
           </div>
         </div>
       )}
+      {!selectedProject && "No item selected"}
     </Dialog>
         // <Dialog open={open} onClose={setOpen} className="relative z-10">
         //   <DialogBackdrop

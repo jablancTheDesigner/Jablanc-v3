@@ -1,8 +1,11 @@
-import Hero from "../components/Hero";
+import dynamic from 'next/dynamic'
 import Head from "next/head";
-import ProjectsList from "../components/ProjectsList";
-import SelectedProject from "../components/SelectedProject";
-import Contact from "../components/Contact";
+import Hero from "../components/Hero";
+
+const ProjectsList = dynamic(() => import("../components/ProjectsList"))
+const SelectedProject = dynamic(() => import("../components/SelectedProject"))
+const Contact = dynamic(() => import("../components/Contact"))
+
 
 export default function Home() {
   const title: string = "Home";
