@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactElement, useEffect } from "react";
 import { motion } from "framer-motion";
 import { JBHeroType } from "../src/dataTypes";
 import {
@@ -41,6 +41,7 @@ const Hero = ({
       <p key={index} className="text-primary opacity-30"><Icon /></p>
     )
   }
+
   return (
     
 <div id="hero" className="hero h-[95%] min-h-[600px] flex flex-col items-center justify-center">

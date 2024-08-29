@@ -1,7 +1,8 @@
 import dynamic from 'next/dynamic'
 import Head from "next/head";
-import Hero from "../components/Hero";
+import { useEffect, useState } from 'react';
 
+const Hero = dynamic(() => import("../components/Hero"))
 const ProjectsList = dynamic(() => import("../components/ProjectsList"))
 const SelectedProject = dynamic(() => import("../components/SelectedProject"))
 const Contact = dynamic(() => import("../components/Contact"))
@@ -12,6 +13,13 @@ export default function Home() {
   const helloText: string = `Hi I'm Jahmal`;
   const heroText: string = "Frontend Engineer & Graphic Designer";
   const heroButtonText: string = "The Work";
+
+  useEffect(() => {
+      return () => {
+          console.log("Page load ====>", performance.now())
+      }
+  }, []);
+
   return (
     <>
       <Head>

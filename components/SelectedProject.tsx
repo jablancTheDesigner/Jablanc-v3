@@ -40,6 +40,9 @@ interface StatsCardPropsType {
   description: string;
 }
 
+const imageLoader = ({ src, width, quality }) => {
+  return`https://placehold.jp/500x400.png`
+}
 
 const SelectedProject = (): ReactElement => {
     const { selectedProject, setSelectedProject, setOpenProject } = usePortfolioContext()
