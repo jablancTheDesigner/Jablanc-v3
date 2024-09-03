@@ -18,8 +18,8 @@ function SocialLinks() {
             <li
               key={i}
               className="p-0 list-none text-2xl flex items-end min-w-[24px]">
-              <Link href={link.address}>
-                <a className="text-3xl lg:text-2xl" target="_blank">{link.icon}</a>
+              <Link href={link.address} className="text-3xl lg:text-2xl" target="_blank">
+                {link.icon}
               </Link>
             </li>
           );

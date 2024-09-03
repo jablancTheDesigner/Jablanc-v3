@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic'
 import Head from "next/head";
 import { useEffect, useState } from 'react';
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const Hero = dynamic(() => import("../components/Hero"))
 const ProjectsList = dynamic(() => import("../components/ProjectsList"))
@@ -36,6 +37,7 @@ export default function Home() {
         <ProjectsList />
         <SelectedProject />
         <Contact />
+        <GoogleAnalytics gaId="G-X4T8G0YSWL" />
     </>
   );
 }
