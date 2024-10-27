@@ -75,8 +75,15 @@ export type Project = {
   client?: string;
   description?: string;
   imageUrl?: string;
+  imageAlt?: string;
   repoLink?: string;
   url?: string;
   gallery?: string[];
   slug?: string;
+  image? : {
+    src: string;
+    alt: string;
+    height?: number;
+    width?: number;
+  }
 }
