@@ -1,4 +1,4 @@
-import { JBProject } from '../../../../src/dataTypes';
+import { JBProject } from "../../../../src/dataTypes";
 import { NextApiRequest, NextApiResponse } from "next";
 import { Projects } from "../../../../src/project-data";
 

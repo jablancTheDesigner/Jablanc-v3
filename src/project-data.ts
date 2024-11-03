@@ -1,9 +1,9 @@
 import { JBProject, Project } from "./dataTypes";
 import { v4 as uuidv4 } from "uuid";
-import {generateSlug} from '../utilities/utilityFunctions'
-import NAVI_IMG from "../public/images/navi_03.png"
-import ECOMMERCE_IMG from "../public/images/ecommerce_03.png"
-import TASKS_IMG from "../public/images/tasks_03.png"
+import { generateSlug } from "../utilities/utilityFunctions";
+import NAVI_IMG from "../public/images/navi_03.png";
+import ECOMMERCE_IMG from "../public/images/ecommerce_03.png";
+import TASKS_IMG from "../public/images/tasks_03.png";
 
 export const Projects: Project[] = [
   {
@@ -16,7 +16,7 @@ export const Projects: Project[] = [
       src: NAVI_IMG.src,
       alt: "Minimalist slide navigation",
       height: NAVI_IMG.height,
-      width: NAVI_IMG.width
+      width: NAVI_IMG.width,
     },
   },
   {
@@ -30,12 +30,12 @@ export const Projects: Project[] = [
       src: TASKS_IMG.src,
       alt: "Minimalist slide navigation",
       height: TASKS_IMG.height,
-      width: TASKS_IMG.width
+      width: TASKS_IMG.width,
     },
   },
   {
     id: "3",
-    title: 'E-Commerce website made with ReactJS and Fake Store API',
+    title: "E-Commerce website made with ReactJS and Fake Store API",
     repoLink: "https://github.com/jablancTheDesigner/puffessional",
     imageUrl: ECOMMERCE_IMG.src,
     gallery: [],
@@ -44,7 +44,7 @@ export const Projects: Project[] = [
       src: ECOMMERCE_IMG.src,
       alt: "Minimalist slide navigation",
       height: ECOMMERCE_IMG.height,
-      width: ECOMMERCE_IMG.width
+      width: ECOMMERCE_IMG.width,
     },
   },
   {
@@ -52,7 +52,8 @@ export const Projects: Project[] = [
     title: "Logo Design: JV Snapshot",
     client: "Jay",
     imageUrl: "https://i.ibb.co/PwvxfRm/JV-Photography.jpg",
-    description: "JV Snapshot is a photography studio based in the Orlando, FL.",
+    description:
+      "JV Snapshot is a photography studio based in the Orlando, FL.",
     gallery: [],
     image: {
       src: "https://i.ibb.co/PwvxfRm/JV-Photography.jpg",

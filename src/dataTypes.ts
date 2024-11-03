@@ -1,4 +1,4 @@
-import { generateSlug } from './../utilities/utilityFunctions';
+import { generateSlug } from "./../utilities/utilityFunctions";
 export interface JBHeaderType {
   title: string;
   subTitle: string;
@@ -50,15 +50,15 @@ export interface JBProject {
   thumbnail?: string;
   gallery?: string[];
   tools?: {
-    react: boolean,
-    sass: boolean,
-    css: boolean,
-    html: boolean,
-    js: boolean,
-    angular: boolean,
-    photoshop: boolean,
-    illustrator: boolean,
-    firebase: boolean
+    react: boolean;
+    sass: boolean;
+    css: boolean;
+    html: boolean;
+    js: boolean;
+    angular: boolean;
+    photoshop: boolean;
+    illustrator: boolean;
+    firebase: boolean;
   };
   description?: string;
   url?: string;
@@ -80,10 +80,10 @@ export type Project = {
   url?: string;
   gallery?: string[];
   slug?: string;
-  image? : {
+  image?: {
     src: string;
     alt: string;
     height?: number;
     width?: number;
-  }
-}
+  };
+};

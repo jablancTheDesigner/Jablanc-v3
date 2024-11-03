@@ -1,25 +1,27 @@
 import { JBProject } from "./dataTypes";
 
-const URL = '/api/content/projects/'
+const URL = "/api/content/projects/";
 
 interface JBProjectsResponse {
   method: string;
-  projects: JBProject[]
+  projects: JBProject[];
 }
 
 interface JBProjectResponse {
   method: string;
   slug: string;
-  project: JBProject
+  project: JBProject;
 }
 
 export async function getProjects(): Promise<JBProjectsResponse> {
-  const response = await fetch(URL+"all");
+  const response = await fetch(URL + "all");
   return response.json();
 }
 
-export async function getProjectsBySlug(slug: string) : Promise<JBProjectResponse> {
-  const response = await fetch(URL+slug);
+export async function getProjectsBySlug(
+  slug: string,
+): Promise<JBProjectResponse> {
+  const response = await fetch(URL + slug);
   const data = await response.json();
   return data;
 }

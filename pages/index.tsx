@@ -1,13 +1,12 @@
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic";
 import Head from "next/head";
-import { useEffect, useState } from 'react';
-import { GoogleAnalytics } from '@next/third-parties/google'
+import { useEffect, useState } from "react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
-const Hero = dynamic(() => import("../components/Hero"))
-const ProjectsList = dynamic(() => import("../components/ProjectsList"))
-const SelectedProject = dynamic(() => import("../components/SelectedProject"))
-const Contact = dynamic(() => import("../components/Contact"))
-
+const Hero = dynamic(() => import("../components/Hero"));
+const ProjectsList = dynamic(() => import("../components/ProjectsList"));
+const SelectedProject = dynamic(() => import("../components/SelectedProject"));
+const Contact = dynamic(() => import("../components/Contact"));
 
 export default function Home() {
   const title: string = "Home";
@@ -16,9 +15,9 @@ export default function Home() {
   const heroButtonText: string = "The Work";
 
   useEffect(() => {
-      return () => {
-          console.log("Page load ====>", performance.now())
-      }
+    return () => {
+      console.log("Page load ====>", performance.now());
+    };
   }, []);
 
   return (
@@ -29,15 +28,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div id="top"></div>
-      <Hero
-          title={helloText}
-          subTitle={heroText}
-          buttonText={heroButtonText}
-        />
-        <ProjectsList />
-        <SelectedProject />
-        <Contact />
-        <GoogleAnalytics gaId="G-X4T8G0YSWL" />
+      <Hero title={helloText} subTitle={heroText} buttonText={heroButtonText} />
+      <ProjectsList />
+      <SelectedProject />
+      <Contact />
+      <GoogleAnalytics gaId="G-X4T8G0YSWL" />
     </>
   );
 }
