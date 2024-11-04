@@ -16,7 +16,7 @@ const Masonry = dynamic(() => import("react-masonry-list"), {
 
 const ProjectsList = (): ReactElement => {
   const { projects, setSelectedProject } = usePortfolioContext();
-  const pageTite = "Client Work & Projects";
+  const pageTite = "Projects";
 
   const handleUrl = (project: JBProject) => {
     if (!project.url) {
@@ -34,13 +34,11 @@ const ProjectsList = (): ReactElement => {
         <div className="gap-4 flex-col mb-8">
           <AnimatedComponent>
             <div className="md:top-[calc(var(--nav-height)+2rem)] flex flex-col py-8 h-auto max-w-lg mx-auto">
-              <AnimatedComponent>
                 <h2
                   className="text-5xl tracking-tight font-bold leading-[0.85] uppercase text-darker text-center mb-8"
                   data-testid="sub-heading">
                   {pageTite}
                 </h2>
-              </AnimatedComponent>
             </div>
           </AnimatedComponent>
 

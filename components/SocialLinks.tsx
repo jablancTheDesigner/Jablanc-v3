@@ -15,7 +15,7 @@ const links = [
 function SocialLinks() {
   return (
     <div className="flex justify-end text-lg text-primary w-auto items-end">
-      <ul className="list-none flex flex-col w-full justify-evenly gap-8">
+      <ul className="list-none flex w-full gap-8">
         {links.map((link, i) => {
           return (
             <li

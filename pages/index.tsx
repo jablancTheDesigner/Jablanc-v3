@@ -11,7 +11,7 @@ const Contact = dynamic(() => import("../components/Contact"));
 export default function Home() {
   const title: string = "Home";
   const helloText: string = `Hi I'm Jahmal`;
-  const heroText: string = "Frontend Engineer & Graphic Designer";
+  const heroText: string = "Hi, I'm Jahmal. Frontend Engineer & Designer";
   const heroButtonText: string = "The Work";
 
   useEffect(() => {

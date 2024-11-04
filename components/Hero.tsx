@@ -30,47 +30,24 @@ const Hero = ({ title, subTitle, buttonText }: JBHeroType): ReactElement => {
     <>
       <div
         id="hero"
-        className="hero h-full flex flex-col items-center justify-center bg-darker relative z-10 md:min-h-[650px] max-h-[1000px] shadow-lg">
+        className="hero h-full flex flex-col items-center justify-center bg-darker relative z-10 md:min-h-[650px]">
         <Nav />
         <div className="container m-auto relative flex flex-col items-center justify-center px-4">
-          <div className="relative flex max-w-xs md:max-w-md lg:max-w-xl flex-col z-10 md:w-full ">
-            {/* Title Text */}
+          <div className="relative flex max-w-3xl flex-col z-10 md:w-full ">
             <AnimatedComponent>
               <div className="flex items-center gap-8 justify-center">
-                <SocialLinks />
-                <div className="text-white z-2 relative font-league-spartan text-left flex flex-col gap-4">
-                  <h4
-                    className="block text-xl md:text-3xl lg:text-4xl text-white"
-                    data-testid="heading">
-                    {title},
-                  </h4>
+                <div className="text-white z-2 relative font-league-spartan text-center flex flex-col gap-4 items-center">
                   <h2
-                    className="text-5xl tracking-tight font-bold leading-[0.85] uppercase"
+                    className="text-3xl md:text-5xl tracking-tight font-bold leading-none uppercase mb-6"
                     data-testid="sub-heading">
-                    {subTitle}.
+                      Hi, I&apos;m Jahmal. <span className="text-primary">Frontend Engineer & Designer</span> <span className="text-gray-600">based in Austin, TX.</span> <span className="text-white">I like to build things for the web.</span>
                   </h2>
-                  <h4
-                    className="block text-4xl text-white"
-                    data-testid="heading">
-                    I like to build things for the web.
-                  </h4>
-                  {/* <motion.div 
-                    className="text-3xl relative justify-start text-primary flex-wrap items-start gap-4 md:gap-8 md:max-w-full hidden md:flex">
-                    {icons.map((icon, idx) => {
-                      return (
-                        renderIcon(icon, idx)
-                      )
-                    })}
-                  </motion.div> */}
+                  <SocialLinks />
                 </div>
               </div>
             </AnimatedComponent>
-            {/* Title Text end */}
-            {/* Hero Button */}
-            {/* Hero Button */}
           </div>
         </div>
-        {/* <Footer /> */}
       </div>
     </>
   );
