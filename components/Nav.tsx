@@ -50,7 +50,7 @@ const Nav = (): ReactElement => {
         <BrandLogo />
         <div className={`flex flex-col ml-auto z-[20] text-right`}>
           <button
-            className={`text-base font-semibold text-white uppercase leading-sung tracking-tight md:hidden block p-4 border border-white rounded-lg w-28`}
+            className={`text-base font-semibold text-white uppercase leading-sung tracking-tight md:hidden block`}
             onClick={() => handleNavOpen()}>
             {navIsOpen ? "Close" : "Menu"}
           </button>
