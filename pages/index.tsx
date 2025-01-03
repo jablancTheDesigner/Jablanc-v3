@@ -7,12 +7,10 @@ const Hero = dynamic(() => import("../components/Hero"));
 const ProjectsList = dynamic(() => import("../components/ProjectsList"));
 const SelectedProject = dynamic(() => import("../components/SelectedProject"));
 const Contact = dynamic(() => import("../components/Contact"));
+const HomePage = dynamic(() => import("../components/Pages/HomePage"));
 
 export default function Home() {
   const title: string = "Home";
-  const helloText: string = `Hi I'm Jahmal`;
-  const heroText: string = "Hi, I'm Jahmal. Frontend Engineer & Designer";
-  const heroButtonText: string = "The Work";
 
   useEffect(() => {
     return () => {
@@ -27,11 +25,8 @@ export default function Home() {
         <meta name="description" content="Home" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div id="top"></div>
-      <Hero title={helloText} subTitle={heroText} buttonText={heroButtonText} />
-      <ProjectsList />
+      <HomePage />
       <SelectedProject />
-      <Contact />
       <GoogleAnalytics gaId="G-X4T8G0YSWL" />
     </>
   );

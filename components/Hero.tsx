@@ -14,7 +14,7 @@ import AnimatedComponent from "./Animated/AnimatedComponent";
 import SocialLinks from "./SocialLinks";
 import Nav from "./Nav";
 
-const Hero = ({ title, subTitle, buttonText }: JBHeroType): ReactElement => {
+const Hero = (): ReactElement => {
   const icons = [
     DiHtml5,
     DiSass,
@@ -40,7 +40,7 @@ const Hero = ({ title, subTitle, buttonText }: JBHeroType): ReactElement => {
                   <h2
                     className="text-3xl md:text-5xl tracking-tight font-bold leading-none uppercase mb-6"
                     data-testid="sub-heading">
-                      Hi, I&apos;m Jahmal. <span className="text-primary">Frontend Engineer & Designer</span> <span className="text-gray-600">based in Austin, TX.</span> <span className="text-white">I like to build things for the web.</span>
+                      Hi! I&apos;m Jahmal, <span className="text-primary">a Frontend Engineer & Designer</span> <span className="text-gray-600">based in Austin, TX.</span> <span className="text-white">I like to build things for the web.</span>
                   </h2>
                   <SocialLinks />
                 </div>

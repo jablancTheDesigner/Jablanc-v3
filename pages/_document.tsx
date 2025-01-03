@@ -10,6 +10,7 @@ export default function Document() {
         />
       </Head>
       <body>
+        <div id="top"></div>
         <Main />
         <NextScript />
       </body>
