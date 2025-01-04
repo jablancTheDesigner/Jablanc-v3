@@ -6,6 +6,7 @@ import { usePortfolioContext } from "../context/PortfolioContext";
 import AnimatedComponent from "./Animated/AnimatedComponent"
 import Image from "next/image";
 import Link from "next/link";
+import Button from "./Button/Button";
 
 const ProjectsList = (): ReactElement => {
   const { projects, setSelectedProject } = usePortfolioContext();
@@ -46,23 +47,16 @@ const ProjectsList = (): ReactElement => {
                       height={item.image.height ?? 350}
                       className="!h-auto mb-4"
                     />
-                    <div className="text-xl md:text-3xl font-bold text-darker w-full max-w-lg text-center">
-                      <h3 className="mb-4 uppercase">{item.title}</h3>
-                      {item.url && (
-                        <Link
-                          href={item.url}
-                          target="_blank"
-                          className="text-lg text-secondary hover:bg-white hover:text-dark px-8 py-3 rounded-md bg-dark text-white">
-                          Link
-                        </Link>
-                      )}
-                      {!item.url && (
-                        <button
-                          onClick={() => setSelectedProject(item)}
-                          className="text-lg text-secondary hover:bg-white hover:text-dark px-8 py-3 rounded-md bg-dark text-white">
-                          Link
-                        </button>
-                      )}
+                    <div className="text-xl md:text-3xl font-bold text-darker w-full max-w-lg text-center flex flex-col flex-1">
+                      <h3 className="text-xl tracking-tight font-bold leading-none uppercase mb-6">{item.title}</h3>
+                      <div className="mt-4">
+                        {item.url && (
+                          <Button text={"Go to Link"} onClick={() => window.open(item.url, "_blank")} />
+                        )}
+                        {!item.url && (
+                          <Button text={"Open details"} onClick={() => setSelectedProject(item)} />
+                        )}
+                      </div>
                     </div>
                 </div>
               </>

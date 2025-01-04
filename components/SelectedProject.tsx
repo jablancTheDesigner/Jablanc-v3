@@ -59,7 +59,7 @@ const SelectedProject = (): ReactElement => {
       onResize={undefined}
       onResizeCapture={undefined}>
       {selectedProject?.id && (
-        <div className="mx-auto relative p-4">
+        <div className="mx-auto relative p-4 text-center">
           <Typography
             className="text-3xl leading-snug text-white mb-1"
             variant="h2"
@@ -69,7 +69,15 @@ const SelectedProject = (): ReactElement => {
             {selectedProject.title}
           </Typography>
           <Typography
-            className="text-base max-w-xs font-normal leading-normal !text-gray-500 mb-12"
+            className="text-xl leading-snug text-white mb-1"
+            variant="h2"
+            nonce={undefined}
+            onResize={undefined}
+            onResizeCapture={undefined}>
+            Client: {selectedProject.client}
+          </Typography>
+          <Typography
+            className="text-base max-w-xs font-normal leading-normal !text-gray-400 mb-12 mx-auto mt-4"
             variant="paragraph"
             nonce={undefined}
             onResize={undefined}

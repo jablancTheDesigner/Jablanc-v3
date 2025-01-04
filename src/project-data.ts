@@ -49,8 +49,8 @@ export const Projects: Project[] = [
   },
   {
     id: "4",
-    title: "Logo Design: JV Snapshot",
-    client: "Jay",
+    title: "Logo Design",
+    client: "JV Snapshot",
     imageUrl: "https://i.ibb.co/PwvxfRm/JV-Photography.jpg",
     description:
       "JV Snapshot is a photography studio based in the Orlando, FL.",
@@ -62,8 +62,8 @@ export const Projects: Project[] = [
   },
   {
     id: "5",
-    title: "Logo Design: Kloud9Kicks",
-    client: "Gabe B.",
+    title: "Logo Design",
+    client: "Kloud9Kicks",
     imageUrl: "https://i.ibb.co/YL5SBms/Kloud-9-Kicks.jpg",
     description: "Kloud9Kicks is a sneaker resale company based in Aiken, SC",
     gallery: [],

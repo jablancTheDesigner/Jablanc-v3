@@ -11,11 +11,11 @@ interface InputData {
 const Input = (inputData: InputData) => {
   return (
     <>
-      <label
+      {/* <label
         htmlFor="first-name"
         className="block text-xl font-semibold leading-6 text-primary mb-1 uppercase text-center">
         {inputData.label}
-      </label>
+      </label> */}
       <input
         {...(inputData.required ? { required: inputData.required } : {})}
         type={inputData.type}
@@ -23,7 +23,7 @@ const Input = (inputData: InputData) => {
         value={inputData.value}
         onChange={inputData.onChangeHandler}
         placeholder={inputData.placeholder ?? ""}
-        className="block w-full rounded-md border-0 px-0 py-5 text-white ring-0 placeholder:text-gray-400 focus:ring-transparent sm:leading-6 bg-transparent outline-none text-center"
+        className="block w-full rounded-md border-0 px-0 py-5 text-white ring-0 placeholder:text-gray-600 focus:ring-transparent sm:leading-6 !bg-transparent outline-none text-center text-2xl"
       />
     </>
   );

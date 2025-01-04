@@ -4,6 +4,7 @@ import useContactForm from "../hooks/useContactForm";
 import { useRouter } from "next/router";
 import emailjs from "@emailjs/browser";
 import AnimatedHeader from "./Animated/AnimatedHeader";
+import Button from "./Button/Button";
 
 const Contact = (): ReactElement => {
   const { formData, handleFormData } = useContactForm({});
@@ -45,10 +46,10 @@ const Contact = (): ReactElement => {
     <div
       id="contact"
       className="bg-darker flex flex-grow h-screen py-[var(--nav-height)]">
-      <div className="m-auto max-w-xl w-full px-8">
+      <div className="m-auto max-w-xl w-full px-8 text-center">
         <AnimatedHeader title={"Contact Me"}></AnimatedHeader>
         <form
-          className="flex flex-col gap-4"
+          className="flex flex-col gap-6 mb-6"
           ref={form}
           name="contactMe"
           onSubmit={handleSubmit}>
@@ -86,9 +87,9 @@ const Contact = (): ReactElement => {
               onChangeHandler={handleFormData}
             />
           </div>
-          <button type="submit" className="app-button mt-6 border">
-            Submit
-          </button>
+          <div className="mt-8">
+            <Button text={"Submit"} type="submit" color="secondary"/>
+          </div>
         </form>
       </div>
     </div>
