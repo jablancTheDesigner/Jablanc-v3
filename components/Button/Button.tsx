@@ -1,22 +1,25 @@
 type ButtonProps = {
+    children?: React.ReactNode;
     text: string;
     onClick?: () => void;
     type?: "button" | "submit" | "reset";
-    color?: "primary" | "secondary";
+    color?: "dark" | "light" | "black";
 }
 
-const Button = ({text, onClick, type, color}: ButtonProps) => {
+const Button = ({children, text, onClick, type, color}: ButtonProps) => {
     const buttonColor = color ?? "primary";
-    const bunttonClass = buttonColor === "primary" 
-        ? "bg-darker hover:bg-white hover:text-dark text-white" 
-        : "bg-primary hover:bg-white hover:text-darker text-darker"
+    const buttonClass = buttonColor === "dark" 
+        ? "text-white border-primary" 
+        : buttonColor === "black"
+        ? "bg-black hover:bg-white hover:text-dark text-white border-white" 
+        : "bg-primary hover:bg-white hover:text-darker text-darker border-dark";
 
     return (
         <button 
             onClick={onClick}
-            className={`text-base px-8 py-3 text-secondary  font-bold uppercase rounded-full ${bunttonClass}`}
+            className={`text-base px-8 py-3 text-secondary font-bold uppercase transition-all hover:scale-110 text-white`}
             type={type ?? "button"}>
-            {text}
+            {children ?? text}
         </button>
     )
 }

@@ -23,12 +23,12 @@ const ProjectsList = (): ReactElement => {
   return (
     <div
       id="projectList"
-      className="min-h-full text-primary font-league-spartan w-full bg-primary py-28">
+      className="min-h-full text-primary font-league-spartan w-full bg-darker py-28">
 
       <AnimatedComponent>
         <div className="md:top-[calc(var(--nav-height)+2rem)] flex flex-col py-8 h-auto max-w-lg mx-auto">
             <h2
-              className="text-5xl tracking-tight font-bold leading-[0.85] uppercase text-darker text-center mb-8"
+              className="text-5xl tracking-tight font-bold leading-[0.85] uppercase text-white text-center mb-8"
               data-testid="sub-heading">
               {pageTite}
             </h2>
@@ -36,9 +36,18 @@ const ProjectsList = (): ReactElement => {
       </AnimatedComponent>
 
 
-      <div className="gap-8 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mb-8 px-8 max-w-7xl mx-auto">
-        {projects.map((item) => (
-              <>
+      <div className="gap-8 grid md:grid-cols-2 grid-cols-1 mb-8 px-8 max-w-7xl mx-auto">
+        {projects.map((item, idx) => (
+              <Button 
+                text={item.url ? "Go to Link" : "Open details"} 
+                onClick={() => {
+                  if(item.url){
+                    window.open(item.url, "_blank")
+                  } else {
+                    setSelectedProject(item)
+                  }
+                }} 
+                color="dark" key={idx}>
                 <div className="flex flex-col items-center">
                     <Image
                       src={item.image.src}
@@ -47,19 +56,8 @@ const ProjectsList = (): ReactElement => {
                       height={item.image.height ?? 350}
                       className="!h-auto mb-4"
                     />
-                    <div className="text-xl md:text-3xl font-bold text-darker w-full max-w-lg text-center flex flex-col flex-1">
-                      <h3 className="text-xl tracking-tight font-bold leading-none uppercase mb-6">{item.title}</h3>
-                      <div className="mt-4">
-                        {item.url && (
-                          <Button text={"Go to Link"} onClick={() => window.open(item.url, "_blank")} />
-                        )}
-                        {!item.url && (
-                          <Button text={"Open details"} onClick={() => setSelectedProject(item)} />
-                        )}
-                      </div>
-                    </div>
                 </div>
-              </>
+              </Button>
             ))
             }
         </div>

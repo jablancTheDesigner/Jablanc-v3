@@ -46,17 +46,19 @@ const Nav = (): ReactElement => {
 
   return (
     <>
-      <nav className="w-full p-8 top-0 left-0 right-0 mx-auto absolute flex justify-between items-center z-30 container">
+      <nav className="w-full pt-8 px-8 top-0 left-0 right-0 mx-auto absolute flex justify-evenly items-center z-30 container">
+        <h1 className="text-xl font-semibold text-white uppercase leading-sung tracking-tight">
+          Jablanc
+        </h1>
+        <div className="mx-auto">
         <BrandLogo />
-        <div className={`flex flex-col ml-auto z-[20] text-right`}>
+        </div>
+        <div className={`flex flex-col z-[20] text-right`}>
           <button
-            className={`text-base font-semibold text-white uppercase leading-sung tracking-tight md:hidden block`}
+            className={`text-base font-semibold text-white uppercase leading-sung tracking-tight block`}
             onClick={() => handleNavOpen()}>
             {navIsOpen ? "Close" : "Menu"}
           </button>
-          <div className="md:flex md:flex-col hidden">
-            <NavLinks />
-          </div>
         </div>
       </nav>
 

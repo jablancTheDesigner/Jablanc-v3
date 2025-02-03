@@ -88,7 +88,7 @@ const Contact = (): ReactElement => {
             />
           </div>
           <div className="mt-8">
-            <Button text={"Submit"} type="submit" color="secondary"/>
+            <Button text={"Submit"} type="submit" color="dark"/>
           </div>
         </form>
       </div>
