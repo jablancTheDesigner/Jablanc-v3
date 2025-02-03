@@ -46,7 +46,7 @@ const Nav = (): ReactElement => {
 
   return (
     <>
-      <nav className="w-full pt-8 px-8 top-0 left-0 right-0 mx-auto absolute flex justify-evenly items-center z-30 container">
+      <nav className="w-full pt-8 px-8 top-0 left-0 right-0 mx-auto relative flex justify-evenly items-center z-30 container">
         <h1 className="text-xl font-semibold text-white uppercase leading-sung tracking-tight">
           Jablanc
         </h1>
